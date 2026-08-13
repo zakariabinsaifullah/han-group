@@ -161,10 +161,7 @@ const Inspector = props => {
                             onChange={value => setAttributes({ navPosition: value })}
                             options={[
                                 { label: __('Middle', 'han-group'), value: 'middle' },
-                                { label: __('Top Left', 'han-group'), value: 'top-left' },
-                                { label: __('Top Right', 'han-group'), value: 'top-right' },
-                                { label: __('Bottom Left', 'han-group'), value: 'bottom-left' },
-                                { label: __('Bottom Right', 'han-group'), value: 'bottom-right' }
+                                { label: __('Bottom Right (Long Arrows)', 'han-group'), value: 'bottom-right-line' }
                             ]}
                         />
                     )}

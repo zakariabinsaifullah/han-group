@@ -25,10 +25,6 @@
         "uniqueId": {
             "type": "string"
         },
-        "resMode": {
-            "type": "string",
-            "default": "Desktop"
-        },
         "itemGaps": {
             "type": "object",
             "default": {}

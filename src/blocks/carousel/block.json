@@ -50,7 +50,7 @@
         },
         "navPosition": {
             "type": "string",
-            "default": "bottom-right"
+            "default": "middle"
         },
         "heights": {
             "type": "object",

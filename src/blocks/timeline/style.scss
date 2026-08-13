@@ -1,4 +1,19 @@
 .wp-block-hang-timeline {
+    /**
+     * Rail tokens for the whole timeline. Every item inherits them from here,
+     * so this is the one place to change the look of the line and its dots.
+     */
+    --tl-rail: #e6decd;
+    --tl-rail-width: 1px;
+    /* How far the line runs on below the last dot. */
+    --tl-rail-tail: 60px;
+    --tl-dot-color: #5b2a31;
+    --tl-dot-bg: #ffffff;
+    --tl-dot-size: 12px;
+    --tl-dot-ring: 2px;
+    /* Nudges the dot down so it sits level with the item's first line of text. */
+    --tl-dot-offset: 6px;
+
     .hang-timeline {
         display: flex;
         flex-direction: column;

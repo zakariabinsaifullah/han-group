@@ -1,11 +1,9 @@
 import { useBlockProps, useInnerBlocksProps, BlockControls } from '@wordpress/block-editor';
 import { Fragment } from '@wordpress/element';
-import { useSelect } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 import { ToolbarGroup, ToolbarButton } from '@wordpress/components';
 import { plus } from '@wordpress/icons';
 import classNames from 'classnames';
-import Inspector from './inspector';
 import { timelineGapProperties } from './gaps';
 
 const TEMPLATE = [
@@ -15,16 +13,12 @@ const TEMPLATE = [
 ];
 
 const Edit = props => {
-    const { attributes, clientId, isSelected } = props;
-    const hasSelectedInnerBlock = useSelect(select => select('core/block-editor').hasSelectedInnerBlock(clientId, true));
+    const { attributes, clientId } = props;
     const { uniqueId, itemGaps, iconGaps } = attributes;
-
-    // Item and icon gaps cascade down from desktop; the items read them via inheritance.
-    const cssCustomProperties = timelineGapProperties(itemGaps, iconGaps);
 
     const blockProps = useBlockProps({
         className: classNames(uniqueId),
-        style: cssCustomProperties
+        style: timelineGapProperties(itemGaps, iconGaps)
     });
 
     const innerBlockProps = useInnerBlocksProps(
@@ -45,7 +39,6 @@ const Edit = props => {
 
     return (
         <Fragment>
-            {(isSelected || hasSelectedInnerBlock) && <Inspector {...props} />}
             <BlockControls>
                 <ToolbarGroup>
                     <ToolbarButton icon={plus} label={__('Add Timeline Item', 'han-group')} onClick={addItem} />

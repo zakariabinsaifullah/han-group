@@ -30,78 +30,91 @@
         gap: 8px;
     }
 
-    // Individual Arrow Overrides for Corner Positioning
-    &.nav-pos-top-left,
-    &.nav-pos-top-right,
-    &.nav-pos-bottom-left,
-    &.nav-pos-bottom-right {
+    /**
+     * Bottom Right, Long Arrows — the pair sits low on the right of the slide,
+     * spaced apart, and each arrow is a full shaft with a small head instead of
+     * a bare chevron.
+     */
+    &.nav-pos-bottom-right-line {
+        // Out of the vertically centred default and down to the corner.
         .hang-nav {
             top: auto;
             transform: none;
             left: auto !important;
             right: auto !important;
         }
-    }
 
-    // Top Left Grouping
-    &.nav-pos-top-left {
-        .swiper-custom-prev { top: var(--nav-gap, 25px) !important; left: var(--nav-gap, 25px) !important; }
-        .swiper-custom-next { top: var(--nav-gap, 25px) !important; left: calc(var(--nav-gap, 25px) + var(--nav-size, 36px) + 8px) !important; }
-    }
-
-    // Top Right Grouping
-    &.nav-pos-top-right {
-        .swiper-custom-next { top: var(--nav-gap, 25px) !important; right: var(--nav-gap, 25px) !important; }
-        .swiper-custom-prev { top: var(--nav-gap, 25px) !important; right: calc(var(--nav-gap, 25px) + var(--nav-size, 36px) + 8px) !important; }
-    }
-
-    // Bottom Left Grouping
-    &.nav-pos-bottom-left {
-        .swiper-custom-prev { bottom: var(--nav-gap, 25px) !important; left: var(--nav-gap, 25px) !important; }
-        .swiper-custom-next { bottom: var(--nav-gap, 25px) !important; left: calc(var(--nav-gap, 25px) + var(--nav-size, 36px) + 8px) !important; }
-    }
-
-    // Bottom Right Grouping
-    &.nav-pos-bottom-right {
         .swiper-custom-next { bottom: var(--nav-gap, 25px) !important; right: var(--nav-gap, 25px) !important; }
-        .swiper-custom-prev { bottom: var(--nav-gap, 25px) !important; right: calc(var(--nav-gap, 25px) + var(--nav-size, 36px) + 8px) !important; }
+        .swiper-custom-prev {
+            bottom: var(--nav-gap, 25px) !important;
+            right: calc(var(--nav-gap, 25px) + var(--nav-size, 36px) + var(--nav-arrow-space, 24px)) !important;
+        }
+
+        .hang-nav {
+            /* The head shrinks to a tip; the shaft below carries the length. */
+            &::before {
+                width: var(--nav-head, 10px);
+                height: var(--nav-head, 10px);
+            }
+
+            &::after {
+                content: '';
+                box-sizing: border-box;
+                flex-shrink: 0;
+                width: var(--nav-arrow-length, 28px);
+                height: 0;
+                border-top: var(--nav-stroke, 2px) solid currentColor;
+            }
+
+            /**
+             * Head then shaft reads as ←; reversing the row turns it into →.
+             * The pull-in is 1.2× the head so the shaft starts at the very tip —
+             * a rotated square sticks out ~0.2× past its own box.
+             */
+            &::before {
+                margin-right: calc(var(--nav-head, 10px) * -1.2);
+            }
+        }
+
+        .swiper-custom-next {
+            flex-direction: row-reverse;
+
+            &::before {
+                margin-right: 0;
+                margin-left: calc(var(--nav-head, 10px) * -1.2);
+            }
+        }
+
+        /* A custom SVG replaces the whole arrow, shaft included. */
+        .hang-nav:has(.hang-custom-svg-container)::after {
+            display: none;
+        }
     }
 
-    // Adjustments for OUTSIDE corners (Places arrows above/below slider)
-    &.outside:not(.nav-pos-middle) {
+    // OUTSIDE with the corner pair: no side padding, arrows drop below the slider.
+    &.outside.nav-pos-bottom-right-line {
         padding-left: 0 !important;
         padding-right: 0 !important;
 
-        &.nav-pos-top-left, &.nav-pos-top-right {
-            .hang-nav { top: calc(-1 * (var(--nav-size, 36px) + 12px)) !important; }
-        }
-        &.nav-pos-bottom-left, &.nav-pos-bottom-right {
-            .hang-nav { bottom: calc(-1 * (var(--nav-size, 36px) + 12px)) !important; }
-        }
-
-        &.nav-pos-top-left, &.nav-pos-bottom-left {
-            .swiper-custom-prev { left: 0 !important; }
-            .swiper-custom-next { left: calc(var(--nav-size, 36px) + 8px) !important; }
-        }
-        &.nav-pos-top-right, &.nav-pos-bottom-right {
-            .swiper-custom-next { right: 0 !important; }
-            .swiper-custom-prev { right: calc(var(--nav-size, 36px) + 8px) !important; }
-        }
+        .hang-nav { bottom: calc(-1 * (var(--nav-size, 36px) + 12px)) !important; }
+        .swiper-custom-next { right: 0 !important; }
+        .swiper-custom-prev { right: calc(var(--nav-size, 36px) + var(--nav-arrow-space, 24px)) !important; }
     }
 
-    // Base Arrow Styles
+    // Base Arrow Styles — a bare chevron, no button chrome around it.
     .hang-nav {
         width: var(--nav-size, 36px);
         height: var(--nav-size, 36px);
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        padding: var(--nav-padding, 8px);
-        border-width: var(--nav-border-width, 1px);
+        padding: var(--nav-padding, 0);
+        border-width: var(--nav-border-width, 0);
         border-style: var(--nav-border-style, solid);
-        border-color: var(--nborder-color, rgba(0, 0, 0, 0.4));
-        background-color: var(--nav-bg, rgba(255, 255, 255, 0.9));
-        border-radius: var(--nav-radius, 999px);
+        border-color: var(--nborder-color, transparent);
+        background-color: var(--nav-bg, transparent);
+        border-radius: var(--nav-radius, 0);
+        color: var(--nav-color, #ffffff);
         box-sizing: border-box;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -111,9 +124,39 @@
         transform: translateY(-50%);
         z-index: 10;
 
+        &:hover {
+            opacity: 0.7;
+        }
+
         &:focus {
             outline: none;
             box-shadow: none;
+        }
+
+        /**
+         * The chevron itself: a square wearing two borders, turned 45°. Drawn in
+         * CSS so the stroke stays hairline-crisp and mitred at any size.
+         */
+        &::before {
+            content: '';
+            box-sizing: border-box;
+            flex-shrink: 0;
+            width: var(--nicon-size, 24px);
+            height: var(--nicon-size, 24px);
+            border-style: solid;
+            border-width: 0;
+            border-color: currentColor;
+            transform: rotate(45deg);
+        }
+
+        /* The picked icon steps aside for the chevron... */
+        > svg {
+            display: none;
+        }
+
+        /* ...but a hand-inserted SVG still wins. */
+        &:has(.hang-custom-svg-container)::before {
+            display: none;
         }
 
         svg {
@@ -132,10 +175,20 @@
 
     .swiper-custom-prev {
         left: var(--nav-gap, 8px);
+
+        &::before {
+            border-left-width: var(--nav-stroke, 2px);
+            border-bottom-width: var(--nav-stroke, 2px);
+        }
     }
 
     .swiper-custom-next {
         right: var(--nav-gap, 8px);
+
+        &::before {
+            border-top-width: var(--nav-stroke, 2px);
+            border-right-width: var(--nav-stroke, 2px);
+        }
     }
 
     // Pagination - fraction number style, positioned on the right half
