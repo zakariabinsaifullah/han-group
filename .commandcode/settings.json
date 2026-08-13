@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(npm:*)",
+      "Shell(python3 -c \"import json; json.load(open('theme.json')); print('valid JSON')\")",
+      "Shell(git add assets/css/blocks.css style.css .commandcode/taste/taste/taste.md && git commit -F - <<'EOF' add hover gradient flip and transitions to buttons Default and alternative button styles now flip their border gradient to 270deg on hover with a 0.2s transition. Also removes Kadence accordion icon overrides from style.css. Co-authored-by: CommandCodeBot <noreply@commandcode.ai> EOF)",
+      "Shell(git:*)",
+      "Shell(node -e \"const s = require('fs').readFileSync('build/extensions/kadence-global-hover/index.js','utf8'); console.log('label present:', s.includes('Enable Hover Gradient Border')); console.log('old label gone:', !s.includes('Global Hover Effect'));\")",
+      "Shell(php -l inc/form.php)",
+      "Shell(node --check assets/js/form-settings.js)",
+      "Shell(php -l inc/shortcodes-page.php)",
+      "Shell(node --check assets/js/shortcodes-copy.js)",
+      "Shell(php -l inc/categories.php)",
+      "Shell(rm:*)",
+      "Shell(php -l inc/shortcode.php)",
+      "Shell(node --check assets/js/shortcode.js)",
+      "Shell(git check-ignore ref/ 2>/dev/null; echo \"---\"; git diff .commandcode/settings.json | head -25)",
+      "Shell(git check-ignore -v ref/ 2>&1; echo \"---\"; git status --porcelain | wc -l)",
+      "Shell(git status --porcelain --ignored 2>/dev/null | grep ref/ | head -3; echo \"---\"; ls -la ../.gitignore 2>/dev/null; cat ../.gitignore 2>/dev/null | grep -i ref; echo \"---done\")",
+      "Shell(git commit -F - <<'EOF' posts grid redesign, remote tabs, admin shortcode page, icon size - Rework posts grid cards: meta row (category, date + read time), read more button, gradient border hover, 24px grid gaps, orange accents - Add btcpa_posts_tabs remote shortcode and JS CustomEvent filtering - Redesign the Breakthrough CPAs admin shortcode reference page - Add ID column to categories screen, form settings copy fallback - Icon block default size 36px, kadence global hover gradient border - Form panel header gradient, gradient submit button Co-authored-by: CommandCodeBot <noreply@commandcode.ai> EOF)",
+      "Shell(ls -la .distignore 2>/dev/null; echo \"---\"; cat .distignore 2>/dev/null; echo \"---ref---\"; cat ref/.distignore 2>/dev/null | head -30)",
+      "Shell(git add .distignore .commandcode && git commit -F - <<'EOF' exclude .commandcode from dist builds Co-authored-by: CommandCodeBot <noreply@commandcode.ai> EOF)",
+      "Shell(awk:*)",
+      "Shell(od:*)",
+      "Shell(git add .distignore .commandcode && git commit -F - <<'EOF' fix mangled patterns in distignore EOF echo \"---committed---\" && git push origin main)",
+      "Shell(ls ref/ 2>/dev/null; echo \"---\"; ls ref/assets/css 2>/dev/null; echo \"---\"; ls ref/inc 2>/dev/null)",
+      "Shell(php -l inc/block-styles.php)",
+      "Shell(git add -A && git commit -F - <<'EOF' style post excerpt more link as gradient button, tweak grid nav - Style the excerpt read-more link with the theme button gradient and arrow icon; flip gradient angle on hover - Remove the outline-link post-excerpt block style (default styling) - Mobile category tabs full-width, 50px nav margin Co-authored-by: CommandCodeBot <noreply@commandcode.ai> EOF)",
+      "Shell(node -e \"const s = require('fs').readFileSync('build/blocks/icon/style-index.css','utf8'); console.log('valign present:', s.includes('icon-valign')); console.log('top:', s.includes('icon-valign-top'));\")",
+      "Shell(for:*)",
+      "Shell(do:*)",
+      "Shell(done:*)",
+      "Shell(while:*)",
+      "Shell(cd /Users/binsaifullah/Studio/han-group/wp-content/themes/han-group && for f in functions.php inc/*.php src/blocks/social-share/render.php src/blocks/marque/render.php; do php -l \"$f\" > /dev/null 2>&1 && echo \"OK $f\" || { echo \"FAIL $f\"; php -l \"$f\"; }; done)"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}

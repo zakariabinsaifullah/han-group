@@ -1,0 +1,57 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hang/tabs",
+    "version": "0.1.0",
+    "title": "Tabs",
+    "category": "hang",
+
+    "description": "Organize content into switchable tabs.",
+    "supports": {
+        "anchor": true,
+        "html": false,
+        "align": ["wide", "full"],
+        "spacing": {
+            "margin": true,
+            "padding": true,
+            "__experimentalDefaultControls": {
+                "margin": false,
+                "padding": false
+            }
+        }
+    },
+    "attributes": {
+        "uniqueId": {
+            "type": "string"
+        },
+        "tabTitles": {
+            "type": "array",
+            "default": []
+        },
+        "tabChildCount": {
+            "type": "number",
+            "default": 3
+        },
+        "tabTitleTag": {
+            "type": "string",
+            "default": "h3"
+        },
+        "blockStyle": {
+            "type": "object"
+        },
+        "navItemBg": {
+            "type": "string"
+        },
+        "numberBg": {
+            "type": "string"
+        },
+        "numberColor": {
+            "type": "string"
+        }
+    },
+    "textdomain": "han-group",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css",
+    "viewScript": ["file:./view.js"]
+}

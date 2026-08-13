@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "hang/timeline",
+    "version": "1.0.0",
+    "title": "Timeline",
+    "category": "hang",
+    "icon": "star-filled",
+    "description": "Vertical timeline with customizable items.",
+    "example": {},
+    "supports": {
+        "anchor": true,
+        "html": false,
+        "align": ["wide", "full"],
+        "spacing": {
+            "margin": true,
+            "padding": true,
+            "__experimentalDefaultControls": {
+                "margin": false,
+                "padding": false
+            }
+        }
+    },
+    "attributes": {
+        "uniqueId": {
+            "type": "string"
+        },
+        "resMode": {
+            "type": "string",
+            "default": "Desktop"
+        },
+        "itemGaps": {
+            "type": "object",
+            "default": {}
+        },
+        "iconGaps": {
+            "type": "object",
+            "default": {}
+        }
+    },
+    "textdomain": "han-group",
+    "editorScript": "file:./index.js",
+    "style": "file:./style-index.css"
+}

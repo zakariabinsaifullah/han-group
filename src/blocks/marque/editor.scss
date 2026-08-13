@@ -1,0 +1,72 @@
+/**
+ * Editor styles for the marquee block
+ */
+
+.wp-block-hang-marque {
+    overflow: hidden;
+    display: flex;
+
+    &.is-style-horizontal-fade {
+        mask-image: linear-gradient(to right, transparent 0, black 128px, black calc(100% - 200px), transparent 100%);
+    }
+
+    &.is-style-vertical-fade {
+        mask-image: linear-gradient(to bottom, transparent 0, black 64px, black calc(100% - 64px), transparent 100%);
+    }
+
+    // Horizontal orientation
+    &.marquee-horizontal {
+        flex-direction: row;
+
+        .hang-marquee-items {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            > * {
+                flex-shrink: 0;
+                margin: 0;
+            }
+            > p,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                margin: 0;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    // Vertical orientation
+    &.marquee-vertical {
+        flex-direction: column;
+        min-height: 400px;
+        height: auto;
+        .hang-marquee-items {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            flex-wrap: nowrap;
+            overflow-y: scroll;
+            > * {
+                flex-shrink: 0;
+                margin: 0;
+                display: block;
+            }
+            > p,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                margin: 0;
+            }
+        }
+    }
+}

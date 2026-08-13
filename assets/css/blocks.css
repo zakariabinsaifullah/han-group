@@ -1,0 +1,261 @@
+:where(figure) {
+    margin: 0 !important;
+}
+
+.wp-block-group {
+    overflow: clip;
+}
+
+.wp-block-buttons.is-style-full-width {
+    width: 100% !important;
+}
+
+.is-style-post-typo.wp-block-post-content h2 {
+    font-size: var(--wp--preset--font-size--hang-heading-three);
+}
+
+.wp-block-post-excerpt__more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 24px;
+    background: var(--wp--preset--gradient--hang-button-gradient);
+    color: var(--wp--preset--color--hang-white);
+}
+
+/* Arrow icon matching the theme's arrow SVG (white stroke). */
+.wp-block-post-excerpt__more-link::after {
+    content: '';
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 11 11' fill='none'%3E%3Cpath d='M.75 5.417h9.333m-4.666 4.666 4.666-4.666L5.417.75' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.2s ease;
+}
+
+.wp-block-post-excerpt__more-link:hover::after {
+    transform: translateX(2px);
+}
+
+a.wp-block-post-excerpt__more-link:hover {
+    background: linear-gradient(90deg, #ffa521 0%, #ff3d8a 64.97%);
+    color: var(--wp--preset--color--hang-white);
+}
+
+header.wp-block-kadence-rowlayout {
+    position: relative;
+}
+
+header.wp-block-kadence-rowlayout::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, rgba(6, 24, 57, 0.7) 50%, rgba(6, 24, 57, 0) 77.94%);
+    content: '';
+    z-index: -1;
+}
+
+.has-glass-effect {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    /* Frost 100 + Refraction 38 + Dispersion 100 */
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(24px) saturate(1.2);
+    -webkit-backdrop-filter: blur(24px) saturate(1.2);
+}
+
+.has-glass-effect::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    /* Light 79° sheen */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.175) 0%, rgba(255, 255, 255, 0.04) 35%, rgba(255, 255, 255, 0) 60%);
+}
+
+.hang-icon-pos .kt-svg-icon-link {
+    flex-direction: row-reverse !important;
+    gap: 12px;
+}
+
+.wp-block-button.is-style-link .wp-block-button__link {
+    display: inline-flex !important;
+    align-items: center;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+
+.has-featured-image-bg:before {
+    background: linear-gradient(172.74deg, rgba(34, 34, 34, 0) -35.15%, #191919 81.33%);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+@media screen and (max-width: 767px) {
+    .is-style-wrap-mobile {
+        flex-wrap: wrap !important;
+    }
+}
+
+/* Kadence Codes */
+.wp-block-kadence-listitem + .wp-block-kadence-listitem {
+    border-top: 1px solid #e8e9ec;
+    padding-top: 16px !important;
+    margin-top: 16px !important;
+}
+
+.kb-table-container {
+    border-radius: 20px;
+}
+
+.kb-table p {
+    margin: 0 !important;
+}
+
+/*
+ * Button styles
+ *
+ * Loaded in both the editor and the front end via `enqueue_block_assets`, so
+ * the two stay identical. Block style variation CSS (`is-style-alternative`,
+ * `is-style-link`) is not emitted from theme.json at all, so those variations
+ * are defined here rather than there.
+ *
+ * Buttons have no hover state by design — do not add one here without also
+ * checking theme.json, or the two will disagree.
+ */
+
+/*
+ * Default button — 1px gradient border.
+ *
+ * A border cannot take a gradient directly, so the button paints two background
+ * layers: an opaque white layer clipped to the padding box (the fill), and the
+ * gradient clipped to the border box (showing only through the 1px transparent
+ * border). theme.json sets `border-color: transparent` and `border-width: 1px`
+ * so the gradient has a gap to show through.
+ *
+ * Excludes the Link and Alternative variations, which define their own borders.
+ */
+.wp-block-button:not(.is-style-link):not(.is-style-alternative) .wp-block-button__link {
+    background-image: linear-gradient(var(--wp--preset--color--hang-white), var(--wp--preset--color--hang-white)),
+        var(--wp--preset--gradient--hang-gradient-two);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 0 11.5px 0 #38a0ff;
+    transition: background-image 0.2s ease;
+}
+
+.wp-block-button:not(.is-style-link):not(.is-style-alternative) .wp-block-button__link:hover {
+    background-image: linear-gradient(var(--wp--preset--color--hang-white), var(--wp--preset--color--hang-white)),
+        linear-gradient(270deg, #2ee6ef 8%, #3d7bff 56%, #ff3d8a 100%);
+}
+
+/*
+ * Alternative — transparent fill, gradient border.
+ *
+ * theme.json declares this variation's border under
+ * `styles.blocks.core/button.variations.alternative`, but block style variation
+ * CSS is not emitted from theme.json (verified against WP 7.0), so it is
+ * restated here. Without it the variation would inherit the default button's
+ * `border-color: transparent` and render with no visible outline.
+ *
+ * The default button's two-layer background trick needs an opaque fill to hide
+ * the gradient, so it cannot produce a transparent button with a gradient
+ * border. Instead the gradient is painted on a `::before` that is masked down
+ * to a 2px ring (content box excluded via mask-composite), leaving the button
+ * itself fully transparent.
+ */
+.wp-block-button.is-style-alternative .wp-block-button__link {
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    color: var(--wp--preset--color--hang-neutral-darkest);
+    position: relative;
+}
+
+.wp-block-button.is-style-alternative .wp-block-button__link::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    padding: 2px;
+    border-radius: inherit;
+    background: var(--wp--preset--gradient--hang-gradient-two);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    transition: background 0.2s ease;
+}
+
+.wp-block-button.is-style-alternative .wp-block-button__link:hover::before {
+    background: linear-gradient(270deg, #2ee6ef 8%, #3d7bff 56%, #ff3d8a 100%);
+}
+
+/*
+ * Link — must not pick up the default button's white fill. Same reason as
+ * Alternative above: the variation's `background: transparent` in theme.json
+ * is not emitted, so it is restated here.
+ */
+.wp-block-button.is-style-link .wp-block-button__link {
+    background-color: transparent;
+    background-image: none;
+}
+
+/* Kadence Table */
+.kb-table-container {
+    border: none !important;
+}
+
+.kb-table-row th:first-child {
+    background: #ebefff !important;
+    border-radius: 20px 20px 0 0 !important;
+}
+
+.kb-table-row th:nth-child(2) {
+    background: #3d7bff !important;
+    border-radius: 20px 20px 0 0 !important;
+}
+
+.kb-table-row th:last-child {
+    background: #ff3d8a !important;
+    border-radius: 20px 20px 0 0 !important;
+}
+
+.kb-table tr:first-child {
+    border-top: 0 !important;
+}
+
+.kb-table-row td:nth-child(2),
+.kb-table-row td:last-child {
+    border-left: 1px solid #dde2f0;
+}
+
+.two-columns .kb-table-row th:first-child {
+    background: #3d7bff !important;
+}
+
+@media (max-width: 600px) {
+    .kb-table {
+        table-layout: auto !important;
+        min-width: 600px !important;
+    }
+}
