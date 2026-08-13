@@ -1,18 +1,12 @@
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
-import { RenderIcon } from '../../helpers';
 
-const Save = (props) => {
-    const { attributes } = props;
-    const { iconName, iconType, customSvgCode, iconSize } = attributes;
-
+const Save = () => {
     const blockProps = useBlockProps.save();
 
     return (
         <div {...blockProps}>
-            <div className="timeline-icon-row">
-                <div className="timeline-icon">
-                    <RenderIcon customSvgCode={customSvgCode} iconName={iconName} size={iconSize} />
-                </div>
+            <div className="timeline-marker" aria-hidden="true">
+                <span className="timeline-dot" />
             </div>
             <div className="timeline-content">
                 <InnerBlocks.Content />
