@@ -18,32 +18,85 @@ if ( ! function_exists( 'hang_get_shortcodes' ) ) :
 	/**
 	 * Returns the list of theme shortcodes to display on the reference page.
 	 *
-	 * Each entry: label, the copy-ready shortcode, a description, and an
-	 * optional list of attributes (name => description).
+	 * Each entry: label, tag, description, one or more copy-ready examples,
+	 * and an optional list of attributes (name => description).
+	 *
+	 * Examples run from the bare tag — every attribute is optional on both
+	 * shortcodes — to a form spelling out each attribute at its default.
 	 */
 	function hang_get_shortcodes() {
 		return array(
 			array(
-				'title'       => __( 'Posts Grid', 'han-group' ),
-				'tag'         => 'hang_posts_grid',
-				'description' => __( 'Renders a filterable, AJAX-paginated post grid with category filter tabs.', 'han-group' ),
-				'example'     => '[hang_posts_grid per_page="9" post_type="post" categories="4,9"]',
+				'title'       => __( 'Events Grid', 'han-group' ),
+				'tag'         => 'events_grid',
+				'description' => __( 'Renders published Events as a card grid: featured image, date, <code>Type</code> term, title, summary, and a Learn More link. Each card links through to the single event.', 'han-group' ),
+				'examples'    => array(
+					array(
+						'label' => __( 'Basic usage', 'han-group' ),
+						'note'  => __( 'Every attribute is optional — this shows 6 events in 3 columns, newest first.', 'han-group' ),
+						'code'  => '[events_grid]',
+					),
+					array(
+						'label' => __( 'All optional attributes', 'han-group' ),
+						'note'  => __( 'Each attribute shown at its default value, except <code>type</code>.', 'han-group' ),
+						'code'  => '[events_grid columns="3" per_page="6" type="webinar" order="DESC" orderby="date"]',
+					),
+				),
 				'attrs'       => array(
-					array( 'name' => 'per_page',  'default' => '6',     'desc' => __( 'Number of posts to show per page.', 'han-group' ) ),
-					array( 'name' => 'post_type', 'default' => 'post',  'desc' => __( 'WordPress post type slug.', 'han-group' ) ),
-					array( 'name' => 'categories','default' => '(all)', 'desc' => __( 'Comma-separated category IDs. Leave empty to include all.', 'han-group' ) ),
-					array( 'name' => 'id',        'default' => '(none)','desc' => __( 'Grid ID for remote tab connection via <code>[hang_posts_tabs]</code>.', 'han-group' ) ),
+					array( 'name' => 'columns',  'default' => '3',      'desc' => __( 'Columns on desktop, 1&ndash;6. Drops to 2 below 1024px and 1 below 767px.', 'han-group' ) ),
+					array( 'name' => 'per_page', 'default' => '6',      'desc' => __( 'How many events to show, 1&ndash;50.', 'han-group' ) ),
+					array( 'name' => 'type',     'default' => '(all)',  'desc' => __( 'Comma-separated <code>Type</code> term slugs or IDs to filter by. Leave empty to include every type.', 'han-group' ) ),
+					array( 'name' => 'order',    'default' => 'DESC',   'desc' => __( 'Sort direction &mdash; <code>ASC</code> or <code>DESC</code>.', 'han-group' ) ),
+					array( 'name' => 'orderby',  'default' => 'date',   'desc' => __( 'Any WP_Query orderby value, such as <code>title</code> or <code>menu_order</code>.', 'han-group' ) ),
 				),
 			),
 			array(
-				'title'       => __( 'Posts Tabs (Remote)', 'han-group' ),
-				'tag'         => 'hang_posts_tabs',
-				'description' => __( 'Outputs standalone filter tabs that control a <code>[hang_posts_grid id="…"]</code> placed anywhere else on the same page.', 'han-group' ),
-				'example'     => '[hang_posts_tabs for="blog" categories="4,9" post_type="post"]',
+				'title'       => __( 'Team Grid', 'han-group' ),
+				'tag'         => 'team_grid',
+				'description' => __( 'Renders published Team members as a card grid. Team members have no single view, so the cards do not link out.', 'han-group' ),
+				'examples'    => array(
+					array(
+						'label' => __( 'Basic usage', 'han-group' ),
+						'note'  => __( 'Every attribute is optional — this shows 12 members in 3 columns, newest first.', 'han-group' ),
+						'code'  => '[team_grid]',
+					),
+					array(
+						'label' => __( 'All optional attributes', 'han-group' ),
+						'note'  => __( 'Each attribute shown at its default value, except <code>ids</code> — replace those placeholder IDs with your own members, or drop the attribute entirely. When <code>ids</code> is set it takes over ordering, so <code>order</code> and <code>orderby</code> are ignored.', 'han-group' ),
+						'code'  => '[team_grid columns="3" per_page="12" ids="12,45,9" order="DESC" orderby="date"]',
+					),
+				),
 				'attrs'       => array(
-					array( 'name' => 'for',       'default' => '(required)', 'desc' => __( 'Must match the <code>id</code> attribute of the target grid.', 'han-group' ) ),
-					array( 'name' => 'categories','default' => '(all)',      'desc' => __( 'Comma-separated category IDs shown as filter tabs.', 'han-group' ) ),
-					array( 'name' => 'post_type', 'default' => 'post',       'desc' => __( 'Post type slug — must match the target grid.', 'han-group' ) ),
+					array( 'name' => 'columns',  'default' => '3',      'desc' => __( 'Columns on desktop, 1&ndash;6.', 'han-group' ) ),
+					array( 'name' => 'per_page', 'default' => '12',     'desc' => __( 'How many members to show, 1&ndash;50. Ignored when <code>ids</code> is set.', 'han-group' ) ),
+					array( 'name' => 'ids',      'default' => '(all)',  'desc' => __( 'Comma-separated member IDs, rendered in exactly the order written. Overrides <code>order</code> and <code>orderby</code>.', 'han-group' ) ),
+					array( 'name' => 'order',    'default' => 'DESC',   'desc' => __( 'Sort direction &mdash; <code>ASC</code> or <code>DESC</code>.', 'han-group' ) ),
+					array( 'name' => 'orderby',  'default' => 'date',   'desc' => __( 'Any WP_Query orderby value, such as <code>title</code> or <code>menu_order</code>.', 'han-group' ) ),
+				),
+			),
+			array(
+				'title'       => __( 'Opening Roles', 'han-group' ),
+				'tag'         => 'opening_roles',
+				'description' => __( 'Renders open roles as a card grid: title, match percentage, Apply button, location, posting date, work arrangement, salary and employment type. Only roles switched on in the Active column of All Open Roles are listed.', 'han-group' ),
+				'examples'    => array(
+					array(
+						'label' => __( 'Basic usage', 'han-group' ),
+						'note'  => __( 'Every attribute is optional — this shows up to 10 active roles in 2 columns, newest first.', 'han-group' ),
+						'code'  => '[opening_roles]',
+					),
+					array(
+						'label' => __( 'All optional attributes', 'han-group' ),
+						'note'  => __( 'Each attribute shown at its default value, except <code>type</code> and <code>nature</code>.', 'han-group' ),
+						'code'  => '[opening_roles columns="2" per_page="10" type="full-time" nature="remote" order="DESC" orderby="date"]',
+					),
+				),
+				'attrs'       => array(
+					array( 'name' => 'columns',  'default' => '2',     'desc' => __( 'Columns on desktop, 1&ndash;4. Drops to a single column below 900px.', 'han-group' ) ),
+					array( 'name' => 'per_page', 'default' => '10',    'desc' => __( 'How many roles to show, 1&ndash;50.', 'han-group' ) ),
+					array( 'name' => 'type',     'default' => '(all)', 'desc' => __( 'Employment type: <code>full-time</code>, <code>part-time</code>, <code>hourly</code>, <code>contractual</code> or <code>internship</code>.', 'han-group' ) ),
+					array( 'name' => 'nature',   'default' => '(all)', 'desc' => __( 'Work arrangement: <code>remote</code>, <code>in-house</code> or <code>hybrid</code>.', 'han-group' ) ),
+					array( 'name' => 'order',    'default' => 'DESC',  'desc' => __( 'Sort direction &mdash; <code>ASC</code> or <code>DESC</code>.', 'han-group' ) ),
+					array( 'name' => 'orderby',  'default' => 'date',  'desc' => __( 'Any WP_Query orderby value, such as <code>title</code> or <code>menu_order</code>.', 'han-group' ) ),
 				),
 			),
 		);
@@ -190,6 +243,19 @@ if ( ! function_exists( 'hang_shortcodes_render_page' ) ) :
 					color: #646970;
 					margin: 0 0 8px;
 				}
+				.psr-example-note {
+					margin: -4px 0 8px;
+					color: #646970;
+					font-size: 12px;
+					line-height: 1.6;
+				}
+				.psr-example-note code {
+					background: #f6f7f7;
+					padding: 1px 5px;
+					border-radius: 3px;
+					font-size: 11px;
+					color: #2c3338;
+				}
 				.psr-example-row {
 					display: flex;
 					align-items: stretch;
@@ -197,8 +263,9 @@ if ( ! function_exists( 'hang_shortcodes_render_page' ) ) :
 					border: 1px solid #e2e4e7;
 					border-radius: 8px;
 					overflow: hidden;
-					margin-bottom: 24px;
+					margin-bottom: 20px;
 				}
+				.psr-example-row:last-of-type { margin-bottom: 24px; }
 				.psr-example-code {
 					flex: 1;
 					background: #f6f7f7;
@@ -338,13 +405,17 @@ if ( ! function_exists( 'hang_shortcodes_render_page' ) ) :
 					</div>
 
 					<div class="psr-card__body">
-						<p class="psr-example-label"><?php esc_html_e( 'Example', 'han-group' ); ?></p>
+						<?php foreach ( $sc['examples'] as $example ) : ?>
+						<p class="psr-example-label"><?php echo esc_html( $example['label'] ); ?></p>
+						<?php if ( ! empty( $example['note'] ) ) : ?>
+						<p class="psr-example-note"><?php echo wp_kses( $example['note'], array( 'code' => array() ) ); ?></p>
+						<?php endif; ?>
 						<div class="psr-example-row">
-							<pre class="psr-example-code"><?php echo esc_html( $sc['example'] ); ?></pre>
+							<pre class="psr-example-code"><?php echo esc_html( $example['code'] ); ?></pre>
 							<button
 								type="button"
 								class="psr-copy-btn"
-								data-code="<?php echo esc_attr( $sc['example'] ); ?>"
+								data-code="<?php echo esc_attr( $example['code'] ); ?>"
 							>
 								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 									<rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -353,6 +424,7 @@ if ( ! function_exists( 'hang_shortcodes_render_page' ) ) :
 								<?php esc_html_e( 'Copy', 'han-group' ); ?>
 							</button>
 						</div>
+						<?php endforeach; ?>
 
 						<?php if ( ! empty( $sc['attrs'] ) ) : ?>
 						<p class="psr-attrs-label"><?php esc_html_e( 'Attributes', 'han-group' ); ?></p>

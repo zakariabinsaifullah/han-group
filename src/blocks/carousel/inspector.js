@@ -19,7 +19,7 @@ import {
     NativeUnitControl,
     NativeIconPicker,
     NativeBoxControl,
-    NativeBorderBoxControl 
+    NativeBorderBoxControl
 } from '../../components';
 
 const Inspector = props => {
@@ -365,7 +365,7 @@ const Inspector = props => {
                         </ToolsPanelItem>
                         <ToolsPanelItem
                             hasValue={() => !!navSize}
-                            label={__('Size', 'han-group')}
+                            label={__('Gap', 'han-group')}
                             onDeselect={() => {
                                 setAttributes({
                                     navSize: undefined
@@ -395,7 +395,7 @@ const Inspector = props => {
                                 onChange={value => setAttributes({ navIconSize: value })}
                             />
                         </ToolsPanelItem>
-                          <ToolsPanelItem
+                        <ToolsPanelItem
                             hasValue={() => !!navColor || !!navbgColor || !!navBorderColor}
                             label={__('Colors', 'han-group')}
                             onDeselect={() => {
@@ -419,7 +419,7 @@ const Inspector = props => {
                                         label: __('Background', 'han-group'),
                                         value: navbgColor,
                                         onChange: color => setAttributes({ navbgColor: color })
-                                    },
+                                    }
                                 ]}
                             />
                         </ToolsPanelItem>
@@ -439,7 +439,7 @@ const Inspector = props => {
                                 onChange={value => setAttributes({ navBorder: value })}
                             />
                         </ToolsPanelItem>
-                        
+
                         <ToolsPanelItem
                             hasValue={() => !!navBorderRadius}
                             label={__('Radius', 'han-group')}
@@ -456,7 +456,7 @@ const Inspector = props => {
                                 onChange={value => setAttributes({ navBorderRadius: value })}
                             />
                         </ToolsPanelItem>
-                      
+
                         <ToolsPanelItem
                             hasValue={() => !!navPadding}
                             label={__('Padding', 'han-group')}

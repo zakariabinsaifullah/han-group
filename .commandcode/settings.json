@@ -31,7 +31,13 @@
       "Shell(do:*)",
       "Shell(done:*)",
       "Shell(while:*)",
-      "Shell(cd /Users/binsaifullah/Studio/han-group/wp-content/themes/han-group && for f in functions.php inc/*.php src/blocks/social-share/render.php src/blocks/marque/render.php; do php -l \"$f\" > /dev/null 2>&1 && echo \"OK $f\" || { echo \"FAIL $f\"; php -l \"$f\"; }; done)"
+      "Shell(cd /Users/binsaifullah/Studio/han-group/wp-content/themes/han-group && for f in functions.php inc/*.php src/blocks/social-share/render.php src/blocks/marque/render.php; do php -l \"$f\" > /dev/null 2>&1 && echo \"OK $f\" || { echo \"FAIL $f\"; php -l \"$f\"; }; done)",
+      "Shell(php -l inc/post-types.php)",
+      "Shell(php -l inc/taxonomies.php)",
+      "Shell(php -l inc/shortcode-team.php)",
+      "Shell(php -l functions.php)",
+      "Shell(php -r $ids = array_values(array_filter(array_map(\"absint\", explode(\",\", \"\")))); var_dump($ids);)",
+      "Shell(php -r '$absint = fn($v) => (int) $v; $ids = array_values(array_filter(array_map($absint, explode(\",\", \"\")))); var_export($ids); echo \"\\n\"; $ids2 = array_values(array_filter(array_map($absint, explode(\",\", \"12,45,78\")))); var_export($ids2); echo \"\\n\";')"
     ],
     "deny": [],
     "defaultMode": "default"

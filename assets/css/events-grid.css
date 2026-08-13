@@ -1,0 +1,218 @@
+/**
+ * Events Grid — [events_grid]
+ *
+ * Colours come from the theme's palette presets, each with a literal fallback
+ * so the grid still renders if the stylesheet loads before global styles.
+ *
+ * 24px is the single spacing unit: card padding, grid gap, and the vertical
+ * rhythm inside a card all use it.
+ */
+
+.heg-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--heg-columns, 3), minmax(0, 1fr));
+    gap: 24px;
+}
+
+/*
+ * The white panel starts halfway up the image, so the image's top half sits
+ * over the page background. The panel is therefore painted by a pseudo-element
+ * rather than being the card's own background.
+ *
+ * Its offset is derived, not guessed: the image is the card width less its
+ * 2 x 24px inset, and 16/9 tall, so half its height is
+ * (100cqw - 48px) x 9/32 -> x 0.28125. `container-type` makes 100cqw resolve
+ * to the card's own width, so this holds at any column count.
+ */
+.heg-card {
+    position: relative;
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+}
+
+.heg-card::before {
+    content: '';
+    position: absolute;
+    top: calc((100cqw - 48px) * 0.28125);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: var(--wp--preset--color--hang-white, #ffffff);
+    box-shadow: 0px 4px 20px rgba(195, 195, 195, 0.25);
+}
+
+/* No featured image means no image to straddle — fill the whole card. */
+.heg-card:not(:has(.heg-card__image))::before {
+    top: 0;
+}
+
+/* Inset left and right so the image lines up with the body's 24px padding. */
+.heg-card__image {
+    position: relative;
+    display: block;
+    padding: 0 24px;
+    line-height: 0;
+}
+
+.heg-card__image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/*
+ * Sits above the panel; both are in flow, so tree order handles the stacking.
+ *
+ * `flex: 1` makes the body absorb the card's spare height. Grid already
+ * stretches every card in a row to the tallest, so this plus the Learn More
+ * link's `margin-top: auto` lands that link on the same baseline across all
+ * cards, however many lines the title or excerpt runs to.
+ */
+.heg-card__body {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+}
+
+/* Two columns: the date stack, then the type label and title. */
+.heg-card__head {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+/* --- Date ---------------------------------------------------------------- */
+
+.heg-card__date {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: flex-start;
+    font-family: var(--wp--preset--font-family--roboto, Roboto, sans-serif);
+    line-height: 1.1;
+}
+
+.heg-card__month {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--wp--preset--color--hang-neptune, #83c1c0);
+}
+
+.heg-card__day {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.heg-card__year {
+    font-size: 12px;
+    font-weight: 700;
+    color: #000000;
+}
+
+/* --- Type + title -------------------------------------------------------- */
+
+.heg-card__headings {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.heg-card__type {
+    font-family: var(--wp--preset--font-family--roboto, Roboto, sans-serif);
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--wp--preset--color--hang-olive, #9a8700);
+}
+
+.heg-card__title {
+    margin: 0;
+    font-family: var(--wp--preset--font-family--roboto, Roboto, sans-serif);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+/*
+ * The weight is repeated on the anchor: theme.json styles links directly, so
+ * the <a> takes its weight from that rule rather than inheriting the h3's.
+ */
+.heg-card__title a {
+    font-weight: 400;
+    color: var(--wp--preset--color--hang-wine-berry, #551c25);
+    text-decoration: none;
+    transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heg-card__title a:hover,
+.heg-card__title a:focus-visible {
+    color: var(--wp--preset--color--hang-neptune, #83c1c0);
+}
+
+/* --- Summary ------------------------------------------------------------- */
+
+.heg-card__excerpt {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--wp--preset--color--hang-neutral-darker, #1f2222);
+}
+
+/* --- Learn More ---------------------------------------------------------- */
+
+/*
+ * Mirrors the Link button variation (`is-style-link`): Roboto 400 16px,
+ * #538988, no underline, 8px gap, and an arrow that inherits the text colour
+ * so both change together on hover.
+ */
+.heg-card__more {
+    display: inline-flex;
+    align-items: center;
+    /* Shrink-wrap the hit area; as a column flex item it would stretch full width. */
+    align-self: flex-start;
+    gap: 8px;
+    margin-top: auto;
+    font-family: var(--wp--preset--font-family--roboto, Roboto, sans-serif);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #538988;
+    text-decoration: none;
+    transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heg-card__more:hover,
+.heg-card__more:focus-visible {
+    color: var(--wp--preset--color--hang-wine-berry, #551c25);
+}
+
+.heg-card__more-icon {
+    flex-shrink: 0;
+}
+
+.heg-empty {
+    margin: 0;
+    color: var(--wp--preset--color--hang-neutral, #838484);
+}
+
+/* --- Responsive ---------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .heg-grid {
+        grid-template-columns: repeat(min(var(--heg-columns, 3), 2), minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .heg-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

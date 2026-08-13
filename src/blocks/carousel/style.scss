@@ -50,6 +50,19 @@
             right: calc(var(--nav-gap, 25px) + var(--nav-size, 36px) + var(--nav-arrow-space, 24px)) !important;
         }
 
+        /* On mobile the pair swings over to the bottom-left, keeping prev → next order. */
+        @media (max-width: 767px) {
+            .swiper-custom-prev {
+                right: auto !important;
+                left: var(--nav-gap, 25px) !important;
+            }
+
+            .swiper-custom-next {
+                right: auto !important;
+                left: calc(var(--nav-gap, 25px) + var(--nav-size, 36px) + var(--nav-arrow-space, 24px)) !important;
+            }
+        }
+
         .hang-nav {
             /* The head shrinks to a tip; the shaft below carries the length. */
             &::before {
@@ -99,6 +112,19 @@
         .hang-nav { bottom: calc(-1 * (var(--nav-size, 36px) + 12px)) !important; }
         .swiper-custom-next { right: 0 !important; }
         .swiper-custom-prev { right: calc(var(--nav-size, 36px) + var(--nav-arrow-space, 24px)) !important; }
+
+        /* Same mobile flip as above, without the edge gap. */
+        @media (max-width: 767px) {
+            .swiper-custom-prev {
+                right: auto !important;
+                left: 0 !important;
+            }
+
+            .swiper-custom-next {
+                right: auto !important;
+                left: calc(var(--nav-size, 36px) + var(--nav-arrow-space, 24px)) !important;
+            }
+        }
     }
 
     // Base Arrow Styles — a bare chevron, no button chrome around it.
@@ -114,7 +140,7 @@
         border-color: var(--nborder-color, transparent);
         background-color: var(--nav-bg, transparent);
         border-radius: var(--nav-radius, 0);
-        color: var(--nav-color, #ffffff);
+        color: var(--nav-color, var(--wp--preset--color--hang-neptune, #83C1C0));
         box-sizing: border-box;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -163,7 +189,7 @@
             width: 1em;
             height: 1em;
             font-size: var(--nicon-size, 16px);
-            color: var(--nav-color, var(--wp--preset--color--hang-big-stone, #192643));
+            color: var(--nav-color, var(--wp--preset--color--hang-neptune, #83C1C0));
             fill: currentColor;
 
             path, circle, rect, polygon, polyline, ellipse, line {
@@ -219,7 +245,7 @@
         height: var(--npagination-height, var(--psize, 10px));
         min-width: var(--psize, 10px);
         border-radius: var(--pradius, 50%);
-        background: var(--pagination-color, var(--wp--preset--color--hang-big-stone, #192643));
+        background: var(--pagination-color, var(--wp--preset--color--hang-bali-hai-darkest, #2A3136));
         opacity: 0.5;
         transition: all 0.3s ease;
         margin: 0 !important;

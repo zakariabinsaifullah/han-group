@@ -148,30 +148,13 @@
             "type": "string"
         },
         "navPadding": {
-            "type": "object",
-            "default": {
-                "top": "",
-                "right": "",
-                "bottom": "",
-                "left": ""
-            }
+            "type": "object"
         },
         "navBorder": {
-            "type": "object",
-            "default": {
-                "color": "",
-                "style": "",
-                "width": ""
-            }
+            "type": "object"
         },
         "navBorderRadius": {
-            "type": "object",
-            "default": {
-                "top": "",
-                "right": "",
-                "bottom": "",
-                "left": ""
-            }
+            "type": "object"
         }
     },
     "textdomain": "han-group",

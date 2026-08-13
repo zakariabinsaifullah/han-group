@@ -46,7 +46,7 @@
 /* ── Header ──────────────────────────────────────────────────────────────────── */
 
 .hang-form-panel__header {
-    background: var(--wp--preset--gradient--hang-gradient-one);
+    background: var(--wp--preset--color--hang-wine-berry, #551c25);
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -186,6 +186,28 @@ body.hang-panel-open {
 
 /* ── Gravity Forms fields ───────────────────────────────────────────────────── */
 
+/* Roboto across every Gravity Form. GF's font variables all resolve back to
+   --gf-font-family-base: controls and placeholders through -primary, labels
+   through -secondary, descriptions through -tertiary, buttons and validation
+   direct. Setting that one variable therefore covers the lot.
+
+   The element rule after it is for the no-framework theme, which predates the
+   CSS API and does not read those variables. */
+.gform_wrapper {
+    --gf-font-family-base: var(--wp--preset--font-family--roboto, Roboto, sans-serif);
+}
+
+.gform_wrapper input,
+.gform_wrapper select,
+.gform_wrapper textarea,
+.gform_wrapper button,
+.gform_wrapper label,
+.gform_wrapper legend,
+.gform_wrapper .gfield_description,
+.gform_wrapper .gform_button {
+    font-family: var(--wp--preset--font-family--roboto, Roboto, sans-serif) !important;
+}
+
 /* Field metrics come from Gravity Forms' own CSS API custom properties rather
    than from per-element overrides. GF derives the height, radius, font size and
    padding of every control from these, so input, select and textarea stay in
@@ -200,12 +222,12 @@ body.hang-panel-open {
     --gf-ctrl-line-height: 52px;
     --gf-ctrl-font-size: 16px;
     --gf-ctrl-padding-x: 16px;
-    --gf-ctrl-radius: 10px;
+    --gf-ctrl-radius: 3px;
     --gf-ctrl-select-icon-size: 12px;
 
-    /* GF caps the radius on larger controls via `min()`, which would leave the
-       textarea at 8px against the 10px of every other field. */
-    --gf-ctrl-radius-max-lg: 10px;
+    /* GF caps the radius on larger controls via `min()`, so the textarea would
+       otherwise disagree with every other field. */
+    --gf-ctrl-radius-max-lg: 3px;
 }
 
 .gform-theme--foundation .gform_fields {
@@ -254,7 +276,7 @@ body.hang-panel-open {
 }
 
 .gform_button.button {
-    background: linear-gradient(270deg, #EED484 0%, #551C25 64.97%) !important;
+    background: var(--wp--preset--color--hang-wine-berry, #551c25) !important;
     color: #ffffff !important;
     padding: 12px 24px !important;
     border: none !important;
@@ -265,8 +287,9 @@ body.hang-panel-open {
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
+/* Repeats the resting colour to override Gravity Forms' own hover background. */
 .gform_button.button:hover {
-    background: linear-gradient(270deg, #EED484 0%, #551C25 64.97%) !important;
+    background: var(--wp--preset--color--hang-wine-berry, #551c25) !important;
     color: #ffffff !important;
 }
 
