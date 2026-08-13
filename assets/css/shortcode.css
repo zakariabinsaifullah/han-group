@@ -28,7 +28,7 @@
 .ipg-filter-btn {
     cursor: pointer;
     background: transparent;
-    border: 1px solid #f47149;
+    border: 1px solid #551c25;
     font-size: 18px;
     font-weight: 400;
     color: #000000;
@@ -39,18 +39,18 @@
 }
 
 .ipg-filter-btn:hover {
-    background: #f47149;
+    background: #551c25;
     color: #ffffff;
 }
 
 .ipg-filter-btn.active {
-    background: #f47149;
+    background: #551c25;
     color: #ffffff;
     font-weight: 400;
 }
 
 .ipg-filter-btn.active:hover {
-    background: #f47149;
+    background: #551c25;
     color: #ffffff !important;
 }
 
@@ -88,7 +88,7 @@
 }
 
 .ipg-no-posts {
-    color: #7F7F7F;
+    color: #838484;
     font-size: 15px;
 }
 
@@ -99,7 +99,7 @@
 .ipg-card {
     display: flex;
     flex-direction: column;
-    border: 1px solid #dde2f0;
+    border: 1px solid #e8ecf0;
     border-radius: 20px;
     padding: 16px;
     position: relative;
@@ -163,7 +163,7 @@
 .ipg-card__category {
     font-size: 14px;
     font-weight: 500;
-    color: #f47149;
+    color: #551c25;
     line-height: 1.4;
 }
 
@@ -176,12 +176,12 @@
 .ipg-card__date,
 .ipg-card__read-time {
     font-size: 14px;
-    color: #7f7f7f;
+    color: #838484;
 }
 
 .ipg-card__sep {
     font-size: 14px;
-    color: #7f7f7f;
+    color: #838484;
 }
 
 .ipg-card__title {
@@ -197,7 +197,7 @@
 }
 
 .ipg-card__title a:hover {
-    color: #f47149;
+    color: #551c25;
 }
 
 .ipg-card__excerpt {
@@ -216,7 +216,7 @@
     margin-top: auto;
     font-size: 14px;
     font-weight: 500;
-    color: #f47149;
+    color: #551c25;
     text-decoration: none;
     transition: color 0.2s ease, gap 0.2s ease;
     align-self: flex-start;
@@ -228,7 +228,7 @@
 }
 
 .ipg-card__read-more:hover {
-    color: #f47149;
+    color: #551c25;
     gap: 12px;
 }
 
@@ -284,13 +284,13 @@
 }
 
 .ipg-page-btn:hover:not(:disabled) {
-    border-color: #f47149;
-    color: #f47149;
+    border-color: #551c25;
+    color: #551c25;
 }
 
 .ipg-page-btn.active {
-    background: #f47149;
-    border-color: #f47149;
+    background: #551c25;
+    border-color: #551c25;
     color: #ffffff;
 }
 

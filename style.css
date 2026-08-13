@@ -120,7 +120,7 @@ p {
     left: 0;
     width: 0;
     height: 1px;
-    background: #3d7bff;
+    background: #8fa4b7;
     content: '';
     transition: 0.3s;
 }
@@ -149,8 +149,8 @@ p {
 }
 
 .gform-theme--no-framework form {
-    border: 1px solid #5997ff;
-    background: #468bff;
+    border: 1px solid #b0bfcc;
+    background: #8fa4b7;
     border-radius: 100px;
     padding: 5px;
     box-sizing: border-box;
@@ -162,11 +162,11 @@ p {
 }
 
 .gform-theme--no-framework .gform-body.gform_body input::placeholder {
-    color: #b5d1ff !important;
+    color: #e8ecf0 !important;
 }
 
 .gform-theme--no-framework .gform-body.gform_body input[type='submit'] {
-    background: #ff3d8a !important;
+    background: #551c25 !important;
     border-radius: 100px;
     font-size: 16px !important;
     font-weight: 600;
@@ -175,11 +175,11 @@ p {
 }
 
 .gform-theme--no-framework .gform-body.gform_body input[type='submit']:hover {
-    background: #cc306e !important;
+    background: #44161d !important;
 }
 
 .kt-blocks-accordion-header .kt-blocks-accordion-title {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 @media (max-width: 767px) {

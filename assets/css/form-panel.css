@@ -123,7 +123,7 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 1.2;
-    color: #192643;
+    color: #2A3136;
     min-height: 42px;
     cursor: pointer;
     transition:
@@ -134,18 +134,18 @@
 }
 
 .hang-form-panel__tab:hover {
-    color: #192643;
+    color: #2A3136;
 }
 
 .hang-form-panel__tab:focus-visible {
-    outline: 2px solid #3d7bff;
+    outline: 2px solid #8fa4b7;
     outline-offset: 2px;
 }
 
 .hang-form-panel__tab.is-active {
     background: #ffffff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    color: #192643;
+    color: #2A3136;
 }
 
 /* ── Tab panels ─────────────────────────────────────────────────────────────── */
@@ -167,13 +167,13 @@
     font-size: clamp(24px, 6vw, 40px);
     font-weight: 400;
     line-height: 1.2;
-    color: #4C4C4C;
+    color: #515353;
     margin: 0 0 16px;
 }
 
 .hang-form-panel__desc {
     font-size: 16px;
-    color: #7F7F7F;
+    color: #838484;
     line-height: 1.2;
     margin: 0 0 20px;
 }
@@ -237,24 +237,24 @@ body.hang-panel-open {
 }
 
 .gfield_label {
-    color: #4C4C4C !important;
+    color: #515353 !important;
     font-weight: 400 !important;
 }
 
 .gform_body input::placeholder,
 .gform_body textarea::placeholder {
-    color: #7F7F7F !important;
+    color: #838484 !important;
 }
 
 .gform_body input:focus,
 .gform_body textarea:focus,
 .gform_body select:focus {
-    border-color: #192643 !important;
+    border-color: #2A3136 !important;
     outline-color: rgba(37, 57, 89, 0.15) !important;
 }
 
 .gform_button.button {
-    background: linear-gradient(270deg, #FFA521 0%, #FF3D8A 64.97%) !important;
+    background: linear-gradient(270deg, #EED484 0%, #551C25 64.97%) !important;
     color: #ffffff !important;
     padding: 12px 24px !important;
     border: none !important;
@@ -262,10 +262,11 @@ body.hang-panel-open {
     font-size: 16px !important;
     font-weight: 400 !important;
     width: auto !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .gform_button.button:hover {
-    background: linear-gradient(270deg, #FFA521 0%, #FF3D8A 64.97%) !important;
+    background: linear-gradient(270deg, #EED484 0%, #551C25 64.97%) !important;
     color: #ffffff !important;
 }
 

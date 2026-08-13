@@ -9,32 +9,32 @@
             "defaultPalette": false,
             "gradients": [
                 {
-                    "gradient": "linear-gradient(270deg, #FF3D8A 7.69%, #3D7BFF 55.77%, #2EE6FF 100%)",
+                    "gradient": "linear-gradient(270deg, #551C25 7.69%, #8FA4B7 55.77%, #83C1C0 100%)",
                     "name": "Gradient One",
                     "slug": "hang-gradient-one"
                 },
                 {
-                    "gradient": "linear-gradient(90deg, #2EE6EF 8%, #3D7BFF 56%, #FF3D8A 100%)",
+                    "gradient": "linear-gradient(90deg, #83C1C0 8%, #8FA4B7 56%, #551C25 100%)",
                     "name": "Gradient Two",
                     "slug": "hang-gradient-two"
                 },
                 {
-                    "gradient": "linear-gradient(90deg, #FF3D8A 33%, #3D7BFF 69%)",
+                    "gradient": "linear-gradient(90deg, #551C25 33%, #8FA4B7 69%)",
                     "name": "Gradient Three",
                     "slug": "hang-gradient-three"
                 },
                 {
-                    "gradient": "linear-gradient(90deg, #3D7BFF 0%, #2EE6FF 100%)",
+                    "gradient": "linear-gradient(90deg, #8FA4B7 0%, #83C1C0 100%)",
                     "name": "Gradient Four",
                     "slug": "hang-gradient-four"
                 },
                 {
-                    "gradient": "linear-gradient(90deg, #FFA521 0%, #FF3D8A 65%)",
+                    "gradient": "linear-gradient(90deg, #EED484 0%, #551C25 65%)",
                     "name": "Gradient Five",
                     "slug": "hang-gradient-five"
                 },
                 {
-                    "gradient": "linear-gradient(270deg, #FFA521 0%, #FF3D8A 64.97%)",
+                    "gradient": "linear-gradient(270deg, #EED484 0%, #551C25 64.97%)",
                     "name": "Button Gradient",
                     "slug": "hang-button-gradient"
                 }
@@ -51,174 +51,209 @@
                     "slug": "hang-neutral-lightest"
                 },
                 {
-                    "color": "#D8D8D8",
+                    "color": "#D9DADA",
                     "name": "Neutral Lighter",
                     "slug": "hang-neutral-lighter"
                 },
                 {
-                    "color": "#B2B2B2",
+                    "color": "#B4B5B5",
                     "name": "Neutral Light",
                     "slug": "hang-neutral-light"
                 },
                 {
-                    "color": "#7F7F7F",
+                    "color": "#838484",
                     "name": "Neutral",
                     "slug": "hang-neutral"
                 },
                 {
-                    "color": "#4C4C4C",
+                    "color": "#515353",
                     "name": "Neutral Dark",
                     "slug": "hang-neutral-dark"
                 },
                 {
-                    "color": "#191919",
+                    "color": "#1F2222",
                     "name": "Neutral Darker",
                     "slug": "hang-neutral-darker"
                 },
                 {
-                    "color": "#000000",
+                    "color": "#070A0A",
                     "name": "Neutral Darkest",
                     "slug": "hang-neutral-darkest"
                 },
                 {
-                    "color": "#E8E9EC",
-                    "name": "Big Stone Lightest",
-                    "slug": "hang-big-stone-lightest"
+                    "color": "#EEE8E9",
+                    "name": "Wine Berry Lightest",
+                    "slug": "hang-wine-berry-lightest"
                 },
                 {
-                    "color": "#D1D3D9",
-                    "name": "Big Stone Lighter",
-                    "slug": "hang-big-stone-lighter"
+                    "color": "#DDD1D3",
+                    "name": "Wine Berry Lighter",
+                    "slug": "hang-wine-berry-lighter"
                 },
                 {
-                    "color": "#5E677B",
-                    "name": "Big Stone Light",
-                    "slug": "hang-big-stone-light"
+                    "color": "#886066",
+                    "name": "Wine Berry Light",
+                    "slug": "hang-wine-berry-light"
                 },
                 {
-                    "color": "#192643",
-                    "name": "Big Stone",
-                    "slug": "hang-big-stone"
+                    "color": "#551C25",
+                    "name": "Wine Berry",
+                    "slug": "hang-wine-berry"
                 },
                 {
-                    "color": "#141E35",
-                    "name": "Big Stone Dark",
-                    "slug": "hang-big-stone-dark"
+                    "color": "#44161D",
+                    "name": "Wine Berry Dark",
+                    "slug": "hang-wine-berry-dark"
                 },
                 {
-                    "color": "#0A0F1A",
-                    "name": "Big Stone Darker",
-                    "slug": "hang-big-stone-darker"
+                    "color": "#220B0E",
+                    "name": "Wine Berry Darker",
+                    "slug": "hang-wine-berry-darker"
                 },
                 {
-                    "color": "#070B14",
-                    "name": "Big Stone Darkest",
-                    "slug": "hang-big-stone-darkest"
+                    "color": "#19080B",
+                    "name": "Wine Berry Darkest",
+                    "slug": "hang-wine-berry-darkest"
                 },
                 {
-                    "color": "#EBFFFF",
-                    "name": "Dodger Blue Lightest",
-                    "slug": "hang-dodger-blue-lightest"
+                    "color": "#F3F5F7",
+                    "name": "Bali Hai Lightest",
+                    "slug": "hang-bali-hai-lightest"
                 },
                 {
-                    "color": "#D8E4FF",
-                    "name": "Dodger Blue Lighter",
-                    "slug": "hang-dodger-blue-lighter"
+                    "color": "#E8ECF0",
+                    "name": "Bali Hai Lighter",
+                    "slug": "hang-bali-hai-lighter"
                 },
                 {
-                    "color": "#77A2FF",
-                    "name": "Dodger Blue Light",
-                    "slug": "hang-dodger-blue-light"
+                    "color": "#B0BFCC",
+                    "name": "Bali Hai Light",
+                    "slug": "hang-bali-hai-light"
                 },
                 {
-                    "color": "#3D7BFF",
-                    "name": "Dodger Blue",
-                    "slug": "hang-dodger-blue"
+                    "color": "#8FA4B7",
+                    "name": "Bali Hai",
+                    "slug": "hang-bali-hai"
                 },
                 {
-                    "color": "#3062CC",
-                    "name": "Dodger Blue Dark",
-                    "slug": "hang-dodger-blue-dark"
+                    "color": "#728392",
+                    "name": "Bali Hai Dark",
+                    "slug": "hang-bali-hai-dark"
                 },
                 {
-                    "color": "#183166",
-                    "name": "Dodger Blue Darker",
-                    "slug": "hang-dodger-blue-darker"
+                    "color": "#394149",
+                    "name": "Bali Hai Darker",
+                    "slug": "hang-bali-hai-darker"
                 },
                 {
-                    "color": "#12244C",
-                    "name": "Dodger Blue Darkest",
-                    "slug": "hang-dodger-blue-darkest"
+                    "color": "#2A3136",
+                    "name": "Bali Hai Darkest",
+                    "slug": "hang-bali-hai-darkest"
                 },
                 {
-                    "color": "#FFEBF3",
-                    "name": "Wild Strawberry Lightest",
-                    "slug": "hang-wild-strawberry-lightest"
+                    "color": "#F4F3E5",
+                    "name": "Olive Lightest",
+                    "slug": "hang-olive-lightest"
                 },
                 {
-                    "color": "#FFD8E7",
-                    "name": "Wild Strawberry Lighter",
-                    "slug": "hang-wild-strawberry-lighter"
+                    "color": "#EAE7CC",
+                    "name": "Olive Lighter",
+                    "slug": "hang-olive-lighter"
                 },
                 {
-                    "color": "#FF77AD",
-                    "name": "Wild Strawberry Light",
-                    "slug": "hang-wild-strawberry-light"
+                    "color": "#B8AB4C",
+                    "name": "Olive Light",
+                    "slug": "hang-olive-light"
                 },
                 {
-                    "color": "#FF3D8A",
-                    "name": "Wild Strawberry",
-                    "slug": "hang-wild-strawberry"
+                    "color": "#9A8700",
+                    "name": "Olive",
+                    "slug": "hang-olive"
                 },
                 {
-                    "color": "#CC306E",
-                    "name": "Wild Strawberry Dark",
-                    "slug": "hang-wild-strawberry-dark"
+                    "color": "#7B6C00",
+                    "name": "Olive Dark",
+                    "slug": "hang-olive-dark"
                 },
                 {
-                    "color": "#661837",
-                    "name": "Wild Strawberry Darker",
-                    "slug": "hang-wild-strawberry-darker"
+                    "color": "#3D3600",
+                    "name": "Olive Darker",
+                    "slug": "hang-olive-darker"
                 },
                 {
-                    "color": "#4C1229",
-                    "name": "Wild Strawberry Darkest",
-                    "slug": "hang-wild-strawberry-darkest"
+                    "color": "#2E2800",
+                    "name": "Olive Darkest",
+                    "slug": "hang-olive-darkest"
                 },
                 {
-                    "color": "#EAFCFF",
-                    "name": "Aqua Lightest",
-                    "slug": "hang-aqua-lightest"
+                    "color": "#F2F8F8",
+                    "name": "Neptune Lightest",
+                    "slug": "hang-neptune-lightest"
                 },
                 {
-                    "color": "#D5FAFF",
-                    "name": "Aqua Lighter",
-                    "slug": "hang-aqua-lighter"
+                    "color": "#E6F2F2",
+                    "name": "Neptune Lighter",
+                    "slug": "hang-neptune-lighter"
                 },
                 {
-                    "color": "#6CEDFF",
-                    "name": "Aqua Light",
-                    "slug": "hang-aqua-light"
+                    "color": "#A8D3D2",
+                    "name": "Neptune Light",
+                    "slug": "hang-neptune-light"
                 },
                 {
-                    "color": "#2EE6FF",
-                    "name": "Aqua",
-                    "slug": "hang-aqua"
+                    "color": "#83C1C0",
+                    "name": "Neptune",
+                    "slug": "hang-neptune"
                 },
                 {
-                    "color": "#24B8CC",
-                    "name": "Aqua Dark",
-                    "slug": "hang-aqua-dark"
+                    "color": "#689A99",
+                    "name": "Neptune Dark",
+                    "slug": "hang-neptune-dark"
                 },
                 {
-                    "color": "#125C66",
-                    "name": "Aqua Darker",
-                    "slug": "hang-aqua-darker"
+                    "color": "#344D4C",
+                    "name": "Neptune Darker",
+                    "slug": "hang-neptune-darker"
                 },
                 {
-                    "color": "#0D454C",
-                    "name": "Aqua Darkest",
-                    "slug": "hang-aqua-darkest"
+                    "color": "#273939",
+                    "name": "Neptune Darkest",
+                    "slug": "hang-neptune-darkest"
+                },
+                {
+                    "color": "#FDFAF2",
+                    "name": "Flax Lightest",
+                    "slug": "hang-flax-lightest"
+                },
+                {
+                    "color": "#FBF6E6",
+                    "name": "Flax Lighter",
+                    "slug": "hang-flax-lighter"
+                },
+                {
+                    "color": "#F3E0A8",
+                    "name": "Flax Light",
+                    "slug": "hang-flax-light"
+                },
+                {
+                    "color": "#EED484",
+                    "name": "Flax",
+                    "slug": "hang-flax"
+                },
+                {
+                    "color": "#BEA969",
+                    "name": "Flax Dark",
+                    "slug": "hang-flax-dark"
+                },
+                {
+                    "color": "#5E5434",
+                    "name": "Flax Darker",
+                    "slug": "hang-flax-darker"
+                },
+                {
+                    "color": "#473F27",
+                    "name": "Flax Darkest",
+                    "slug": "hang-flax-darkest"
                 }
             ],
             "units": ["%", "px", "em", "rem", "vh", "vw"]
@@ -228,136 +263,112 @@
             "fluid": true,
             "fontFamilies": [
                 {
-                    "name": "Poppins",
-                    "slug": "poppins",
-                    "fontFamily": "\"Poppins\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+                    "name": "FreightText Pro",
+                    "slug": "freight-text-pro",
+                    "fontFamily": "\"FreightText Pro Book\", Georgia, \"Times New Roman\", Times, serif",
                     "fontFace": [
                         {
-                            "src": ["file:./assets/fonts/poppins/poppins-300-normal.woff2"],
-                            "fontWeight": "300",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Poppins\""
-                        },
-                        {
-                            "src": ["file:./assets/fonts/poppins/poppins-300-italic.woff2"],
-                            "fontWeight": "300",
-                            "fontStyle": "italic",
-                            "fontFamily": "\"Poppins\""
-                        },
-                        {
-                            "src": ["file:./assets/fonts/poppins/poppins-400-normal.woff2"],
+                            "src": ["file:./assets/fonts/freight-text-pro/freight-text-pro-400-normal.woff2"],
                             "fontWeight": "400",
                             "fontStyle": "normal",
-                            "fontFamily": "\"Poppins\""
-                        },
-                        {
-                            "src": ["file:./assets/fonts/poppins/poppins-400-italic.woff2"],
-                            "fontWeight": "400",
-                            "fontStyle": "italic",
-                            "fontFamily": "\"Poppins\""
-                        },
-                        {
-                            "src": ["file:./assets/fonts/poppins/poppins-500-normal.woff2"],
-                            "fontWeight": "500",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Poppins\""
-                        },
-                        {
-                            "src": ["file:./assets/fonts/poppins/poppins-500-italic.woff2"],
-                            "fontWeight": "500",
-                            "fontStyle": "italic",
-                            "fontFamily": "\"Poppins\""
-                        },
-                        {
-                            "src": ["file:./assets/fonts/poppins/poppins-600-normal.woff2"],
-                            "fontWeight": "600",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Poppins\""
-                        },
-                        {
-                            "src": ["file:./assets/fonts/poppins/poppins-600-italic.woff2"],
-                            "fontWeight": "600",
-                            "fontStyle": "italic",
-                            "fontFamily": "\"Poppins\""
-                        },
-                        {
-                            "src": ["file:./assets/fonts/poppins/poppins-700-normal.woff2"],
-                            "fontWeight": "700",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Poppins\""
-                        },
-                        {
-                            "src": ["file:./assets/fonts/poppins/poppins-700-italic.woff2"],
-                            "fontWeight": "700",
-                            "fontStyle": "italic",
-                            "fontFamily": "\"Poppins\""
+                            "fontFamily": "\"FreightText Pro Book\""
                         }
                     ]
                 },
                 {
-                    "name": "Montserrat",
-                    "slug": "montserrat",
-                    "fontFamily": "\"Montserrat\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+                    "name": "Roboto",
+                    "slug": "roboto",
+                    "fontFamily": "\"Roboto\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
                     "fontFace": [
                         {
-                            "src": ["file:./assets/fonts/montserrat/montserrat-300-normal.woff2"],
+                            "src": ["file:./assets/fonts/roboto/roboto-200-normal.woff2"],
+                            "fontWeight": "200",
+                            "fontStyle": "normal",
+                            "fontFamily": "\"Roboto\""
+                        },
+                        {
+                            "src": ["file:./assets/fonts/roboto/roboto-200-italic.woff2"],
+                            "fontWeight": "200",
+                            "fontStyle": "italic",
+                            "fontFamily": "\"Roboto\""
+                        },
+                        {
+                            "src": ["file:./assets/fonts/roboto/roboto-300-normal.woff2"],
                             "fontWeight": "300",
                             "fontStyle": "normal",
-                            "fontFamily": "\"Montserrat\""
+                            "fontFamily": "\"Roboto\""
                         },
                         {
-                            "src": ["file:./assets/fonts/montserrat/montserrat-300-italic.woff2"],
+                            "src": ["file:./assets/fonts/roboto/roboto-300-italic.woff2"],
                             "fontWeight": "300",
                             "fontStyle": "italic",
-                            "fontFamily": "\"Montserrat\""
+                            "fontFamily": "\"Roboto\""
                         },
                         {
-                            "src": ["file:./assets/fonts/montserrat/montserrat-400-normal.woff2"],
+                            "src": ["file:./assets/fonts/roboto/roboto-400-normal.woff2"],
                             "fontWeight": "400",
                             "fontStyle": "normal",
-                            "fontFamily": "\"Montserrat\""
+                            "fontFamily": "\"Roboto\""
                         },
                         {
-                            "src": ["file:./assets/fonts/montserrat/montserrat-400-italic.woff2"],
+                            "src": ["file:./assets/fonts/roboto/roboto-400-italic.woff2"],
                             "fontWeight": "400",
                             "fontStyle": "italic",
-                            "fontFamily": "\"Montserrat\""
+                            "fontFamily": "\"Roboto\""
                         },
                         {
-                            "src": ["file:./assets/fonts/montserrat/montserrat-500-normal.woff2"],
+                            "src": ["file:./assets/fonts/roboto/roboto-500-normal.woff2"],
                             "fontWeight": "500",
                             "fontStyle": "normal",
-                            "fontFamily": "\"Montserrat\""
+                            "fontFamily": "\"Roboto\""
                         },
                         {
-                            "src": ["file:./assets/fonts/montserrat/montserrat-500-italic.woff2"],
+                            "src": ["file:./assets/fonts/roboto/roboto-500-italic.woff2"],
                             "fontWeight": "500",
                             "fontStyle": "italic",
-                            "fontFamily": "\"Montserrat\""
+                            "fontFamily": "\"Roboto\""
                         },
                         {
-                            "src": ["file:./assets/fonts/montserrat/montserrat-600-normal.woff2"],
+                            "src": ["file:./assets/fonts/roboto/roboto-600-normal.woff2"],
                             "fontWeight": "600",
                             "fontStyle": "normal",
-                            "fontFamily": "\"Montserrat\""
+                            "fontFamily": "\"Roboto\""
                         },
                         {
-                            "src": ["file:./assets/fonts/montserrat/montserrat-600-italic.woff2"],
+                            "src": ["file:./assets/fonts/roboto/roboto-600-italic.woff2"],
                             "fontWeight": "600",
                             "fontStyle": "italic",
-                            "fontFamily": "\"Montserrat\""
+                            "fontFamily": "\"Roboto\""
                         },
                         {
-                            "src": ["file:./assets/fonts/montserrat/montserrat-700-normal.woff2"],
+                            "src": ["file:./assets/fonts/roboto/roboto-700-normal.woff2"],
                             "fontWeight": "700",
                             "fontStyle": "normal",
-                            "fontFamily": "\"Montserrat\""
+                            "fontFamily": "\"Roboto\""
                         },
                         {
-                            "src": ["file:./assets/fonts/montserrat/montserrat-700-italic.woff2"],
+                            "src": ["file:./assets/fonts/roboto/roboto-700-italic.woff2"],
                             "fontWeight": "700",
                             "fontStyle": "italic",
-                            "fontFamily": "\"Montserrat\""
+                            "fontFamily": "\"Roboto\""
+                        },
+                        {
+                            "src": ["file:./assets/fonts/roboto/roboto-800-normal.woff2"],
+                            "fontWeight": "800",
+                            "fontStyle": "normal",
+                            "fontFamily": "\"Roboto\""
+                        },
+                        {
+                            "src": ["file:./assets/fonts/roboto/roboto-900-normal.woff2"],
+                            "fontWeight": "900",
+                            "fontStyle": "normal",
+                            "fontFamily": "\"Roboto\""
+                        },
+                        {
+                            "src": ["file:./assets/fonts/roboto/roboto-900-italic.woff2"],
+                            "fontWeight": "900",
+                            "fontStyle": "italic",
+                            "fontFamily": "\"Roboto\""
                         }
                     ]
                 }
@@ -462,7 +473,7 @@
             "presets": [
                 {
                     "name": "Default Shadow",
-                    "shadow": "0 0 11.5px 0 #38A0FF",
+                    "shadow": "0 0 11.5px 0 #8FA4B7",
                     "slug": "hang-shadow"
                 }
             ]
@@ -485,9 +496,14 @@
                             "style": "none",
                             "width": "0"
                         },
+                        ":hover": {
+                            "color": {
+                                "text": "var(--wp--preset--color--hang-wine-berry)"
+                            }
+                        },
                         "color": {
                             "background": "transparent",
-                            "text": "var(--wp--preset--color--hang-neutral-darkest)"
+                            "text": "#538988"
                         },
                         "css": "background: transparent !important;",
                         "spacing": {
@@ -499,19 +515,41 @@
                             }
                         },
                         "typography": {
-                            "textDecoration": "underline"
+                            "textDecoration": "none"
                         }
                     },
                     "alternative": {
+                        ":hover": {
+                            "color": {
+                                "text": "var(--wp--preset--color--hang-white)"
+                            }
+                        },
                         "border": {
-                            "color": "transparent",
+                            "radius": "100px"
+                        },
+                        "color": {
+                            "background": "var(--wp--preset--color--hang-neptune)",
+                            "text": "#000000"
+                        }
+                    },
+                    "outline": {
+                        ":hover": {
+                            "border": {
+                                "color": "#000000"
+                            },
+                            "color": {
+                                "text": "#000000"
+                            }
+                        },
+                        "border": {
+                            "color": "var(--wp--preset--color--hang-white)",
                             "radius": "100px",
                             "style": "solid",
-                            "width": "2px"
+                            "width": "1px"
                         },
                         "color": {
                             "background": "transparent",
-                            "text": "var(--wp--preset--color--hang-neutral-darkest)"
+                            "text": "var(--wp--preset--color--hang-white)"
                         }
                     }
                 }
@@ -672,7 +710,7 @@
             },
             "core/paragraph": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--montserrat)",
+                    "fontFamily": "var(--wp--preset--font-family--freight-text-pro)",
                     "fontSize": "var(--wp--preset--font-size--hang-large)",
                     "lineHeight": "1.5"
                 },
@@ -894,48 +932,50 @@
         "elements": {
             "button": {
                 "border": {
-                    "color": "transparent",
-                    "radius": "100px",
-                    "style": "solid",
-                    "width": "1px"
+                    "radius": "100px"
                 },
                 "color": {
                     "background": "var(--wp--preset--color--hang-white)",
-                    "text": "var(--wp--preset--color--hang-dodger-blue)"
+                    "text": "var(--wp--preset--color--hang-wine-berry)"
                 },
                 "css": "transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);",
                 "spacing": {
                     "padding": {
-                        "bottom": "12px",
+                        "bottom": "10px",
                         "left": "24px",
                         "right": "24px",
-                        "top": "12px"
+                        "top": "10px"
                     }
                 },
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--poppins)",
+                    "fontFamily": "var(--wp--preset--font-family--roboto)",
                     "fontSize": "var(--wp--preset--font-size--hang-large)",
                     "fontStyle": "normal",
-                    "fontWeight": "500",
+                    "fontWeight": "400",
                     "lineHeight": "1.5"
+                },
+                ":hover": {
+                    "color": {
+                        "text": "#000000"
+                    }
                 },
                 ":focus": {
                     "outline": {
-                        "color": "var(--wp--preset--color--hang-big-stone)",
+                        "color": "var(--wp--preset--color--hang-bali-hai-darkest)",
                         "offset": "2px"
                     }
                 }
             },
             "caption": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--montserrat)",
+                    "fontFamily": "var(--wp--preset--font-family--freight-text-pro)",
                     "fontSize": "var(--wp--preset--font-size--hang-small)",
                     "lineHeight": "1.5"
                 }
             },
             "h1": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--poppins)",
+                    "fontFamily": "var(--wp--preset--font-family--roboto)",
                     "fontSize": "var(--wp--preset--font-size--hang-heading-one)",
                     "fontStyle": "normal",
                     "fontWeight": "400",
@@ -947,7 +987,7 @@
             },
             "h2": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--poppins)",
+                    "fontFamily": "var(--wp--preset--font-family--roboto)",
                     "fontSize": "var(--wp--preset--font-size--hang-heading-two)",
                     "fontStyle": "normal",
                     "fontWeight": "400",
@@ -959,7 +999,7 @@
             },
             "h3": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--poppins)",
+                    "fontFamily": "var(--wp--preset--font-family--roboto)",
                     "fontSize": "var(--wp--preset--font-size--hang-heading-three)",
                     "fontStyle": "normal",
                     "fontWeight": "400",
@@ -971,7 +1011,7 @@
             },
             "h4": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--poppins)",
+                    "fontFamily": "var(--wp--preset--font-family--roboto)",
                     "fontSize": "var(--wp--preset--font-size--hang-heading-four)",
                     "fontStyle": "normal",
                     "fontWeight": "400",
@@ -983,7 +1023,7 @@
             },
             "h5": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--poppins)",
+                    "fontFamily": "var(--wp--preset--font-family--roboto)",
                     "fontSize": "var(--wp--preset--font-size--hang-heading-five)",
                     "fontStyle": "normal",
                     "fontWeight": "400",
@@ -996,7 +1036,7 @@
             },
             "h6": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--poppins)",
+                    "fontFamily": "var(--wp--preset--font-family--roboto)",
                     "fontSize": "var(--wp--preset--font-size--hang-heading-six)",
                     "fontStyle": "normal",
                     "fontWeight": "400",
@@ -1013,7 +1053,7 @@
                     "text": "var(--wp--preset--color--hang-neutral-darkest)"
                 },
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--poppins)",
+                    "fontFamily": "var(--wp--preset--font-family--roboto)",
                     "fontStyle": "normal",
                     "fontWeight": "400",
                     "letterSpacing": "0px",
@@ -1023,7 +1063,7 @@
             "link": {
                 ":hover": {
                     "color": {
-                        "text": "var(--wp--preset--color--hang-aqua-dark)"
+                        "text": "var(--wp--preset--color--hang-wine-berry-dark)"
                     },
                     "typography": {
                         "textDecoration": "none"
@@ -1034,7 +1074,7 @@
                 },
                 "css": "transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);",
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--montserrat)",
+                    "fontFamily": "var(--wp--preset--font-family--freight-text-pro)",
                     "fontStyle": "normal",
                     "fontWeight": "400",
                     "lineHeight": "1.5",
@@ -1052,7 +1092,7 @@
             }
         },
         "typography": {
-            "fontFamily": "var(--wp--preset--font-family--montserrat)",
+            "fontFamily": "var(--wp--preset--font-family--freight-text-pro)",
             "fontSize": "var(--wp--preset--font-size--hang-large)",
             "fontStyle": "normal",
             "fontWeight": "400",

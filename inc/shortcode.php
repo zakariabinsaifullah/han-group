@@ -99,7 +99,7 @@ if ( ! function_exists( 'hang_posts_grid_render_post_item' ) ) :
 		}
 
 		// Read more button.
-		$arrow_svg = '<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M.75 5.417h9.333m-4.666 4.666 4.666-4.666L5.417.75" stroke="url(#hang-arrow-grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="hang-arrow-grad" x1="12.12" y1=".71" x2="-.53" y2="1.894" gradientUnits="userSpaceOnUse"><stop offset=".184" stop-color="#fb8561"/><stop offset=".918" stop-color="#f47149"/></linearGradient></defs></svg>';
+		$arrow_svg = '<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M.75 5.417h9.333m-4.666 4.666 4.666-4.666L5.417.75" stroke="url(#hang-arrow-grad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="hang-arrow-grad" x1="12.12" y1=".71" x2="-.53" y2="1.894" gradientUnits="userSpaceOnUse"><stop offset=".184" stop-color="#886066"/><stop offset=".918" stop-color="#551c25"/></linearGradient></defs></svg>';
 		$html    .= '<a class="ipg-card__read-more" href="' . esc_url( $permalink ) . '">';
 		$html    .= '<span>' . esc_html__( 'Read More', 'han-group' ) . '</span>';
 		$html    .= $arrow_svg;
