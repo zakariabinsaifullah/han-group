@@ -14,15 +14,16 @@
     font-size: var(--wp--preset--font-size--hang-heading-three);
 }
 
+.wp-block-post-title a {
+    font-weight: 400;
+}
+
 .wp-block-post-excerpt__more-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     border: none;
-    border-radius: 100px;
-    padding: 10px 24px;
-    background: var(--wp--preset--gradient--hang-button-gradient);
-    color: var(--wp--preset--color--hang-white);
+    color: #538988;
 }
 
 /* Arrow icon matching the theme's arrow SVG (white stroke). */
@@ -31,7 +32,7 @@
     width: 11px;
     height: 11px;
     flex-shrink: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 11 11' fill='none'%3E%3Cpath d='M.75 5.417h9.333m-4.666 4.666 4.666-4.666L5.417.75' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxNCAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTguMjUgMC4yODEyNUwxMy43NSA1LjUzMTI1QzEzLjkwNjIgNS42ODc1IDE0IDUuODc1IDE0IDYuMDkzNzVDMTQgNi4yODEyNSAxMy45MDYyIDYuNDY4NzUgMTMuNzUgNi42MjVMOC4yNSAxMS44NzVDNy45Njg3NSAxMi4xNTYyIDcuNDY4NzUgMTIuMTU2MiA3LjE4NzUgMTEuODQzOEM2LjkwNjI1IDExLjU2MjUgNi45MDYyNSAxMS4wNjI1IDcuMjE4NzUgMTAuNzgxMkwxMS4zNzUgNi44NDM3NUgwLjc1QzAuMzEyNSA2Ljg0Mzc1IDAgNi41IDAgNi4wOTM3NUMwIDUuNjU2MjUgMC4zMTI1IDUuMzQzNzUgMC43NSA1LjM0Mzc1SDExLjM3NUw3LjIxODc1IDEuMzc1QzYuOTA2MjUgMS4wOTM3NSA2LjkwNjI1IDAuNTkzNzUgNy4xODc1IDAuMzEyNUM3LjQ2ODc1IDAgNy45Mzc1IDAgOC4yNSAwLjI4MTI1WiIgZmlsbD0iIzUzODk4OCIvPgo8L3N2Zz4K');
     background-repeat: no-repeat;
     background-size: contain;
     transition: transform 0.2s ease;
@@ -39,11 +40,6 @@
 
 .wp-block-post-excerpt__more-link:hover::after {
     transform: translateX(2px);
-}
-
-a.wp-block-post-excerpt__more-link:hover {
-    background: linear-gradient(90deg, #eed484 0%, #551c25 64.97%);
-    color: var(--wp--preset--color--hang-white);
 }
 
 header.wp-block-kadence-rowlayout {

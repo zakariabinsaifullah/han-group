@@ -3,17 +3,22 @@
  *
  * The -50px lift is part of the look and stays fixed; only the scale factor is
  * exposed as a setting, carried in on `--hang-image-scale`.
+ *
+ * Desktop only. Below 1025px the image renders untouched — the same breakpoint
+ * the carousel block uses for its desktop tier.
  */
-.wp-block-image.has-scaled-image {
-    /**
-     * Trim the sideways spill from the scale, but let the -50px lift keep
-     * showing. `clip` is the only value that pairs with `visible` — `hidden`
-     * would force the other axis to `auto` and add a scrollbar.
-     */
-    overflow-x: clip;
-    overflow-y: visible;
+@media (min-width: 1025px) {
+    .wp-block-image.has-scaled-image {
+        /**
+         * Trim the sideways spill from the scale, but let the -50px lift keep
+         * showing. `clip` is the only value that pairs with `visible` —
+         * `hidden` would force the other axis to `auto` and add a scrollbar.
+         */
+        overflow-x: clip;
+        overflow-y: visible;
 
-    img {
-        transform: translateY(-50px) scale(var(--hang-image-scale, 1.1));
+        img {
+            transform: translateY(-50px) scale(var(--hang-image-scale, 1.1));
+        }
     }
 }
