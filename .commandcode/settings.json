@@ -37,7 +37,8 @@
       "Shell(php -l inc/shortcode-team.php)",
       "Shell(php -l functions.php)",
       "Shell(php -r $ids = array_values(array_filter(array_map(\"absint\", explode(\",\", \"\")))); var_dump($ids);)",
-      "Shell(php -r '$absint = fn($v) => (int) $v; $ids = array_values(array_filter(array_map($absint, explode(\",\", \"\")))); var_export($ids); echo \"\\n\"; $ids2 = array_values(array_filter(array_map($absint, explode(\",\", \"12,45,78\")))); var_export($ids2); echo \"\\n\";')"
+      "Shell(php -r '$absint = fn($v) => (int) $v; $ids = array_values(array_filter(array_map($absint, explode(\",\", \"\")))); var_export($ids); echo \"\\n\"; $ids2 = array_values(array_filter(array_map($absint, explode(\",\", \"12,45,78\")))); var_export($ids2); echo \"\\n\";')",
+      "Shell(cd /Users/binsaifullah/Studio/han-group/wp-content/themes/han-group && git commit -F - <<'EOF' Rebrand to Han Group, add Team post type and team grid shortcode - Rebrand theme to Han Group with hang/HANG prefix and han-group text domain - Add Team post type (no single view) with designation and short intro meta - Add [team_grid] shortcode with ids filtering and centered last row - Add events, roles, and team grid stylesheets and shortcodes - Remove marque, rating, and tabs blocks Co-authored-by: CommandCodeBot <noreply@commandcode.ai> EOF)"
     ],
     "deny": [],
     "defaultMode": "default"

@@ -5,7 +5,6 @@ import { RenderIcon } from '../../helpers';
 export default function save({ attributes }) {
     const {
         blockStyle,
-        heightType,
         columns,
         gaps,
         showArrows,
@@ -36,7 +35,6 @@ export default function save({ attributes }) {
             {...useBlockProps.save({
                 style: blockStyle,
                 className: classNames({
-                    fixed: heightType === 'fixed',
                     outside: navType === 'outside' && showArrows,
                     [`nav-pos-${navPosition}`]: navPosition
                 })
@@ -51,20 +49,10 @@ export default function save({ attributes }) {
             {showArrows && (
                 <>
                     <div className="swiper-custom-prev hang-nav">
-                        <RenderIcon
-                            customSvgCode={prevCustomSvg}
-                            iconName={prevIconName}
-                            iconType={prevIconType}
-                            size={navIconSize}
-                        />
+                        <RenderIcon customSvgCode={prevCustomSvg} iconName={prevIconName} iconType={prevIconType} size={navIconSize} />
                     </div>
                     <div className="swiper-custom-next hang-nav">
-                        <RenderIcon
-                            customSvgCode={nextCustomSvg}
-                            iconName={nextIconName}
-                            iconType={nextIconType}
-                            size={navIconSize}
-                        />
+                        <RenderIcon customSvgCode={nextCustomSvg} iconName={nextIconName} iconType={nextIconType} size={navIconSize} />
                     </div>
                 </>
             )}

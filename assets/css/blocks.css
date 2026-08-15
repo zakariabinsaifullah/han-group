@@ -208,11 +208,6 @@ header.wp-block-kadence-rowlayout::before {
     color: var(--wp--preset--color--hang-wine-berry);
 }
 
-/* Image */
-figure.wp-block-image.is-style-scaled img {
-    transform: translateY(-50px) scale(1.1);
-}
-
 /* Kadence Table */
 .kb-table-container {
     border: none !important;

@@ -1340,6 +1340,115 @@ add_filter( 'render_block', 'hang_render_kadence_global_hover', 10, 2 );
 
 
 // =============================================================================
+// Image – Scaled Image Extension
+// =============================================================================
+
+if ( ! function_exists( 'hang_enqueue_image_scale_editor_assets' ) ) :
+	/**
+	 * Enqueues the image-scale extension script and editor stylesheet.
+	 * Runs on `enqueue_block_editor_assets` (editor only).
+	 */
+	function hang_enqueue_image_scale_editor_assets() {
+		$asset_file = get_theme_file_path( 'build/extensions/image-scale/index.asset.php' );
+
+		if ( ! file_exists( $asset_file ) ) {
+			return;
+		}
+
+		$assets = require $asset_file;
+
+		wp_enqueue_script(
+			'hang-image-scale-extension',
+			get_theme_file_uri( 'build/extensions/image-scale/index.js' ),
+			$assets['dependencies'],
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+
+		$editor_css = get_theme_file_path( 'build/extensions/image-scale/index.css' );
+		if ( file_exists( $editor_css ) ) {
+			wp_enqueue_style(
+				'hang-image-scale-extension',
+				get_theme_file_uri( 'build/extensions/image-scale/index.css' ),
+				array(),
+				wp_get_theme()->get( 'Version' )
+			);
+		}
+	}
+endif;
+add_action( 'enqueue_block_editor_assets', 'hang_enqueue_image_scale_editor_assets' );
+
+
+if ( ! function_exists( 'hang_enqueue_image_scale_frontend_assets' ) ) :
+	/**
+	 * Enqueues the image-scale frontend stylesheet.
+	 * Runs on `enqueue_block_assets` (editor + front end).
+	 */
+	function hang_enqueue_image_scale_frontend_assets() {
+		$style_file = get_theme_file_path( 'build/extensions/image-scale/style-index.css' );
+
+		if ( ! file_exists( $style_file ) ) {
+			return;
+		}
+
+		wp_enqueue_style(
+			'hang-image-scale-extension-style',
+			get_theme_file_uri( 'build/extensions/image-scale/style-index.css' ),
+			array(),
+			wp_get_theme()->get( 'Version' )
+		);
+	}
+endif;
+add_action( 'enqueue_block_assets', 'hang_enqueue_image_scale_frontend_assets' );
+
+
+if ( ! function_exists( 'hang_render_image_scale' ) ) :
+	/**
+	 * Injects the `has-scaled-image` class and `--hang-image-scale` custom
+	 * property into core/image blocks on the frontend when the `isScaled`
+	 * attribute is enabled.
+	 *
+	 * @param string $block_content The rendered block HTML.
+	 * @param array  $block         The block data including name and attributes.
+	 * @return string Modified block HTML.
+	 */
+	function hang_render_image_scale( $block_content, $block ) {
+		if ( 'core/image' !== $block['blockName'] ) {
+			return $block_content;
+		}
+
+		if ( empty( $block['attrs']['isScaled'] ) ) {
+			return $block_content;
+		}
+
+		if ( empty( $block_content ) ) {
+			return $block_content;
+		}
+
+		$scale = isset( $block['attrs']['imageScale'] ) ? (float) $block['attrs']['imageScale'] : 1.1;
+
+		$processor = new WP_HTML_Tag_Processor( $block_content );
+		if ( $processor->next_tag() ) {
+			$processor->add_class( 'has-scaled-image' );
+
+			$existing_style = $processor->get_attribute( 'style' ) ?? '';
+			$new_style      = rtrim( $existing_style, '; ' );
+			if ( $new_style ) {
+				$new_style .= ';';
+			}
+			$new_style .= '--hang-image-scale:' . $scale;
+			$processor->set_attribute( 'style', $new_style );
+
+			return $processor->get_updated_html();
+		}
+
+		return $block_content;
+	}
+endif;
+add_filter( 'render_block', 'hang_render_image_scale', 10, 2 );
+
+
+// =============================================================================
 // Heading & Paragraph – Highlight Format
 // =============================================================================
 

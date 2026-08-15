@@ -25,8 +25,10 @@
             "default": "Desktop"
         },
         "heightType": {
-            "type": "string",
-            "default": "adaptive"
+            "type": "object",
+            "default": {
+                "Desktop": "adaptive"
+            }
         },
         "columns": {
             "type": "object",
@@ -54,11 +56,11 @@
         },
         "heights": {
             "type": "object",
-            "default": {
-                "Desktop": "300px",
-                "Tablet": "250px",
-                "Mobile": "200px"
-            }
+            "default": {}
+        },
+        "vAligns": {
+            "type": "object",
+            "default": {}
         },
         "autoplay": {
             "type": "boolean",

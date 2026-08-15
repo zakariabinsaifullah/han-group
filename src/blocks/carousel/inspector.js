@@ -1,6 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { InspectorControls } from '@wordpress/block-editor';
 import {
+    Button,
     PanelBody,
     __experimentalBorderBoxControl as BorderBoxControl,
     __experimentalToggleGroupControl as ToggleGroupControl,
@@ -21,6 +22,23 @@ import {
     NativeBoxControl,
     NativeBorderBoxControl
 } from '../../components';
+import { resolveResponsive } from './utils';
+
+/**
+ * Tablet and Mobile inherit Desktop until they are given a value of their own,
+ * so once one is pinned it needs a way back to the inherited value.
+ */
+const InheritReset = ({ device, value, onReset }) => {
+    if (device === 'Desktop' || value === undefined || value === '') {
+        return null;
+    }
+
+    return (
+        <Button variant="link" onClick={onReset}>
+            {__('Use desktop value', 'han-group')}
+        </Button>
+    );
+};
 
 const Inspector = props => {
     const { attributes, setAttributes } = props;
@@ -28,6 +46,7 @@ const Inspector = props => {
         resMode,
         heightType,
         heights,
+        vAligns,
         columns,
         gaps,
         autoplay,
@@ -62,30 +81,64 @@ const Inspector = props => {
         nextCustomSvg
     } = attributes;
 
+    // What the device currently in preview actually renders with.
+    const currentHeightType = resolveResponsive(heightType, resMode) || 'adaptive';
+    const currentHeight = resolveResponsive(heights, resMode) || '';
+    const currentVAlign = resolveResponsive(vAligns, resMode) || 'top';
+
     return (
         <>
             <InspectorControls group="settings">
                 <PanelBody title={__('General', 'han-group')} initialOpen={true}>
-                    <NativeToggleGroupControl
-                        label={__('Height Type', 'han-group')}
-                        value={heightType}
-                        onChange={value => setAttributes({ heightType: value })}
-                        options={[
-                            { label: __('Adaptive', 'han-group'), value: 'adaptive' },
-                            { label: __('Fixed', 'han-group'), value: 'fixed' }
-                        ]}
-                    />
-                    {heightType === 'fixed' && (
-                        <NativeResponsiveControl label={__('Height', 'han-group')} props={props}>
-                            <NativeUnitControl
-                                label={__('Slider Height', 'han-group')}
-                                value={heights[resMode]}
-                                onChange={value => {
-                                    const newHeights = { ...heights, [resMode]: value };
-                                    setAttributes({ heights: newHeights });
-                                }}
-                            />
-                        </NativeResponsiveControl>
+                    <NativeResponsiveControl label={__('Height Type', 'han-group')} props={props}>
+                        <NativeToggleGroupControl
+                            value={currentHeightType}
+                            onChange={value => setAttributes({ heightType: { ...heightType, [resMode]: value } })}
+                            options={[
+                                { label: __('Adaptive', 'han-group'), value: 'adaptive' },
+                                { label: __('Fixed', 'han-group'), value: 'fixed' }
+                            ]}
+                        />
+                        <InheritReset
+                            device={resMode}
+                            value={heightType?.[resMode]}
+                            onReset={() => setAttributes({ heightType: { ...heightType, [resMode]: undefined } })}
+                        />
+                    </NativeResponsiveControl>
+                    {currentHeightType === 'fixed' && (
+                        <>
+                            <NativeResponsiveControl label={__('Height', 'han-group')} props={props}>
+                                <NativeUnitControl
+                                    label={__('Slider Height', 'han-group')}
+                                    value={currentHeight}
+                                    onChange={value => {
+                                        const newHeights = { ...heights, [resMode]: value };
+                                        setAttributes({ heights: newHeights });
+                                    }}
+                                />
+                                <InheritReset
+                                    device={resMode}
+                                    value={heights?.[resMode]}
+                                    onReset={() => setAttributes({ heights: { ...heights, [resMode]: undefined } })}
+                                />
+                            </NativeResponsiveControl>
+                            <NativeResponsiveControl label={__('Vertical Align', 'han-group')} props={props}>
+                                <NativeToggleGroupControl
+                                    value={currentVAlign}
+                                    onChange={value => setAttributes({ vAligns: { ...vAligns, [resMode]: value } })}
+                                    options={[
+                                        { label: __('Top', 'han-group'), value: 'top' },
+                                        { label: __('Middle', 'han-group'), value: 'middle' },
+                                        { label: __('Bottom', 'han-group'), value: 'bottom' }
+                                    ]}
+                                />
+                                <InheritReset
+                                    device={resMode}
+                                    value={vAligns?.[resMode]}
+                                    onReset={() => setAttributes({ vAligns: { ...vAligns, [resMode]: undefined } })}
+                                />
+                            </NativeResponsiveControl>
+                        </>
                     )}
                 </PanelBody>
                 <PanelBody title={__('Slider Options', 'han-group')} initialOpen={false}>

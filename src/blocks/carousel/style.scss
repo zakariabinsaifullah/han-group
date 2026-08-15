@@ -2,24 +2,32 @@
     border: none !important;
     position: relative;
 
-    // Swiper slide height control
-    &.fixed {
+    /**
+     * Slide height and vertical alignment, one custom property per breakpoint.
+     * The Desktop → Tablet/Mobile fallback is already resolved in JS, so a
+     * device only misses its property when it is genuinely adaptive — hence the
+     * `auto` fallback here rather than a `.fixed` gate on the wrapper.
+     */
+    .wp-block-hang-slide {
+        display: flex;
+        flex-direction: column;
+        height: var(--mheight, auto);
+        justify-content: var(--mvalign, flex-start);
+    }
+
+    // tablet view
+    @media (max-width: 1024px) and (min-width: 768px) {
         .wp-block-hang-slide {
-            height: var(--mheight);
+            height: var(--theight, auto);
+            justify-content: var(--tvalign, flex-start);
         }
+    }
 
-        // tablet view
-        @media (max-width: 1024px) and (min-width: 768px) {
-            .wp-block-hang-slide {
-                height: var(--theight);
-            }
-        }
-
-        // desktop
-        @media (min-width: 1025px) {
-            .wp-block-hang-slide {
-                height: var(--dheight);
-            }
+    // desktop
+    @media (min-width: 1025px) {
+        .wp-block-hang-slide {
+            height: var(--dheight, auto);
+            justify-content: var(--dvalign, flex-start);
         }
     }
 

@@ -36,14 +36,6 @@ if ( ! function_exists( 'hang_block_styles' ) ) :
 				'label' => __( 'Link', 'han-group' ),
 			)
 		);
-
-		register_block_style(
-			'core/image',
-			array(
-				'name'  => 'scaled',
-				'label' => __( 'Scaled', 'han-group' ),
-			)
-		);
 	}
 endif;
 add_action( 'init', 'hang_block_styles' );

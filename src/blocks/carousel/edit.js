@@ -14,6 +14,7 @@ import Inspector from './inspector';
 import classNames from 'classnames';
 import { RenderIcon } from '../../helpers';
 import { generateBoxStyles, generateBorderWidth, generateBorderStyle, generateBorderColor } from '../../styles';
+import { generateHeightStyles } from './utils';
 
 // Block edit function
 const Edit = props => {
@@ -21,6 +22,7 @@ const Edit = props => {
     const {
         heightType,
         heights,
+        vAligns,
         columns,
         gaps,
         resMode,
@@ -51,18 +53,16 @@ const Edit = props => {
         nextIconType,
         nextCustomSvg
     } = attributes;
-      // tab nav
-        const navPaddingStyles = generateBoxStyles(navPadding);
-        const navBorderWidth = generateBorderWidth(navBorder);
-        const navBorderStyle = generateBorderStyle(navBorder);
-        const navBorderColorValue = generateBorderColor(navBorder);
-        const navBorderRadiusStyle = generateBoxStyles(navBorderRadius);
+    // tab nav
+    const navPaddingStyles = generateBoxStyles(navPadding);
+    const navBorderWidth = generateBorderWidth(navBorder);
+    const navBorderStyle = generateBorderStyle(navBorder);
+    const navBorderColorValue = generateBorderColor(navBorder);
+    const navBorderRadiusStyle = generateBoxStyles(navBorderRadius);
 
     // CSS Custom Properties
     const cssCustomProperties = {
-        ...(heightType === 'fixed' && heights?.Desktop && { '--dheight': `${heights['Desktop']}` }),
-        ...(heightType === 'fixed' && heights?.Tablet && { '--theight': `${heights['Tablet']}` }),
-        ...(heightType === 'fixed' && heights?.Mobile && { '--mheight': `${heights['Mobile']}` }),
+        ...generateHeightStyles(heightType, heights, vAligns),
         ...(paginationColor && { '--pagination-color': paginationColor }),
         ...(apaginationHeight && { '--apagination-height': `${apaginationHeight}` }),
         ...(npaginationHeight && { '--npagination-height': `${npaginationHeight}` }),
@@ -92,6 +92,7 @@ const Edit = props => {
     }, [
         heightType,
         heights,
+        vAligns,
         navColor,
         navbgColor,
         paginationColor,
@@ -130,7 +131,6 @@ const Edit = props => {
     const blockProps = useBlockProps({
         style: cssCustomProperties,
         className: classNames({
-            fixed: heightType === 'fixed',
             outside: navType === 'outside' && showArrows,
             [`nav-pos-${navPosition}`]: navPosition
         })
@@ -159,20 +159,10 @@ const Edit = props => {
                 {showArrows && (
                     <>
                         <div className="swiper-custom-prev hang-nav">
-                            <RenderIcon
-                                customSvgCode={prevCustomSvg}
-                                iconName={prevIconName}
-                                iconType={prevIconType}
-                                size={navIconSize}
-                            />
+                            <RenderIcon customSvgCode={prevCustomSvg} iconName={prevIconName} iconType={prevIconType} size={navIconSize} />
                         </div>
                         <div className="swiper-custom-next hang-nav">
-                            <RenderIcon
-                                customSvgCode={nextCustomSvg}
-                                iconName={nextIconName}
-                                iconType={nextIconType}
-                                size={navIconSize}
-                            />
+                            <RenderIcon customSvgCode={nextCustomSvg} iconName={nextIconName} iconType={nextIconType} size={navIconSize} />
                         </div>
                     </>
                 )}
